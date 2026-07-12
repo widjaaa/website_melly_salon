@@ -1,7 +1,5 @@
+import BookingPageComponent from '../features/booking/BookingPage';
+
 export default function BookingPage() {
-    return (
-        <div>
-            <h1>Booking Page</h1>
-        </div>
-    );
+  return <BookingPageComponent />;
 }

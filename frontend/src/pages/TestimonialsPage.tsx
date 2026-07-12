@@ -1,7 +1,5 @@
+import TestimonialsPageComponent from '../features/testimonials/TestimonialsPage';
+
 export default function TestimonialsPage() {
-    return (
-        <div>
-            <h1>Testimonials Page</h1>
-        </div>
-    );
+  return <TestimonialsPageComponent />;
 }

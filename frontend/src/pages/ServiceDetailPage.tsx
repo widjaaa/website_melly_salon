@@ -1,7 +1,5 @@
+import ServiceDetailPageComponent from '../features/services/ServiceDetailPage';
+
 export default function ServiceDetailPage() {
-    return (
-        <div>
-            <h1>Service Detail Page</h1>
-        </div>
-    );
+  return <ServiceDetailPageComponent />;
 }
