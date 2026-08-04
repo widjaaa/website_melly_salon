@@ -4,7 +4,7 @@ import { Button } from '../../../components/ui/Button';
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center bg-white overflow-hidden py-24 lg:py-0">
+    <section className="relative min-h-[80vh] flex items-center bg-white overflow-hidden py-12 lg:py-0">
       {/* Decorative Background Elements */}
       <div 
         className="absolute top-0 right-0 w-[600px] h-[600px] bg-pink-50 rounded-full blur-3xl opacity-60 -translate-y-1/2 translate-x-1/3 pointer-events-none" 
@@ -16,10 +16,10 @@ export function HeroSection() {
       />
       
       <Container>
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-6 items-center">
           
           {/* Left Content Area */}
-          <div className="flex flex-col items-start space-y-8 max-w-2xl">
+          <div className="flex flex-col items-start space-y-6 max-w-2xl">
             {/* Small Badge */}
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-pink-50 border border-pink-100 shadow-sm">
               <span className="text-sm font-semibold text-purple-700 tracking-wide uppercase">

@@ -72,7 +72,7 @@ export function Navbar() {
           <div className="flex items-center md:hidden">
             <button
               type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-purple-700 hover:bg-purple-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-700 transition-colors duration-200"
+              className="inline-flex items-center justify-center p-2 rounded-none text-gray-600 hover:text-purple-700 hover:bg-purple-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-700 transition-colors duration-200"
               aria-expanded={isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
@@ -104,7 +104,7 @@ export function Navbar() {
               to={link.path}
               onClick={closeMobileMenu}
               className={({ isActive }) =>
-                `block px-3 py-3 rounded-md text-base font-medium transition-colors duration-200 ${
+                `block px-3 py-3 rounded-none text-base font-medium transition-colors duration-200 ${
                   isActive
                     ? 'text-purple-700 bg-purple-50'
                     : 'text-gray-600 hover:text-purple-700 hover:bg-purple-50'

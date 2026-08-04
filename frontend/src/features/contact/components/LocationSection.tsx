@@ -5,14 +5,14 @@ import { Button } from '../../../components/ui/Button';
 
 export function LocationSection() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 bg-white">
       <Container>
         <SectionTitle title="Visit Our Salon" subtitle="Find us easily right in the heart of the city." />
         
-        <div className="mt-16 bg-gray-50 rounded-[3rem] p-4 lg:p-8 flex flex-col lg:flex-row gap-8 relative overflow-hidden border border-gray-100">
+        <div className="mt-8 bg-gray-50 rounded-none p-4 lg:p-8 flex flex-col lg:flex-row gap-6 relative overflow-hidden border border-gray-100">
           
           {/* Google Maps Placeholder */}
-          <div className="w-full lg:w-2/3 h-[400px] lg:h-auto rounded-[2.5rem] overflow-hidden relative shadow-inner bg-gray-200">
+          <div className="w-full lg:w-2/3 h-[400px] lg:h-auto rounded-none overflow-hidden relative shadow-inner bg-gray-200">
             <img 
               src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=1200" 
               alt="Map Location Placeholder" 
@@ -29,8 +29,8 @@ export function LocationSection() {
 
           {/* Salon Address Card */}
           <div className="w-full lg:w-1/3 flex">
-            <Card className="w-full bg-white border-transparent shadow-xl rounded-[2.5rem] h-full flex flex-col justify-center border-none">
-              <CardContent className="p-8 lg:p-10 space-y-8">
+            <Card className="w-full bg-white border-transparent shadow-xl rounded-none h-full flex flex-col justify-center border-none">
+              <CardContent className="p-8 lg:p-6 space-y-6">
                 <div>
                   <h3 className="text-3xl font-bold text-gray-900 mb-2">Melly Beauty Salon</h3>
                   <p className="text-purple-600 font-medium text-lg">Premium Beauty Services</p>

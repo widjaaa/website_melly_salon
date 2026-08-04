@@ -2,17 +2,17 @@ import Container from '../../../components/ui/Container';
 
 export function ServiceInfo() {
   return (
-    <section className="py-20 lg:py-32 bg-white">
+    <section className="py-12 lg:py-12 bg-white">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-20 items-start">
           
           {/* Image Container with luxury offset shadow */}
           <div className="relative">
-            <div className="absolute inset-0 bg-pink-100 rounded-[3rem] transform -translate-x-4 translate-y-4"></div>
+            <div className="absolute inset-0 bg-pink-100 rounded-none transform -translate-x-4 translate-y-4"></div>
             <img 
               src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=800" 
               alt="Premium Service Highlights" 
-              className="relative rounded-[3rem] w-full h-full object-cover shadow-2xl aspect-square lg:aspect-[4/5]"
+              className="relative rounded-none w-full h-full object-cover shadow-2xl aspect-square lg:aspect-[4/5]"
             />
           </div>
           

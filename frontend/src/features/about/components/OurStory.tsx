@@ -5,18 +5,18 @@ import { Button } from '../../../components/ui/Button';
 
 export function OurStory() {
   return (
-    <section className="py-20 lg:py-32 bg-white">
+    <section className="py-12 lg:py-12 bg-white">
       <Container>
         <SectionTitle title="Our Story" subtitle="A journey of passion and dedication to beauty." />
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mt-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-center mt-8">
           {/* Image */}
           <div className="relative">
-            <div className="absolute inset-0 bg-pink-100 rounded-[2.5rem] transform translate-x-4 translate-y-4"></div>
+            <div className="absolute inset-0 bg-pink-100 rounded-none transform translate-x-4 translate-y-4"></div>
             <img 
               src="https://images.unsplash.com/photo-1596178060671-7a80b62d8544?auto=format&fit=crop&q=80&w=800" 
               alt="Melly Salon Journey" 
-              className="relative rounded-[2.5rem] w-full h-full object-cover shadow-lg aspect-square lg:aspect-[4/5] hover:scale-[1.02] transition-transform duration-500"
+              className="relative rounded-none w-full h-full object-cover shadow-lg aspect-square lg:aspect-[4/5] hover:scale-[1.02] transition-transform duration-500"
             />
           </div>
           
@@ -33,7 +33,7 @@ export function OurStory() {
             </div>
             <div className="mt-10">
               <Link to="/services" tabIndex={-1}>
-                <Button size="lg" className="px-10 shadow-md">
+                <Button size="lg" className="px-6 shadow-md">
                   Discover Our Services
                 </Button>
               </Link>

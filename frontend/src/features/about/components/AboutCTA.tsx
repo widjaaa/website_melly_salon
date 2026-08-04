@@ -4,9 +4,9 @@ import { Button } from '../../../components/ui/Button';
 
 export function AboutCTA() {
   return (
-    <section className="py-24 bg-white relative">
+    <section className="py-12 bg-white relative">
       <Container>
-        <div className="bg-pink-50 rounded-[3rem] px-8 py-20 text-center shadow-lg border border-pink-100 overflow-hidden relative">
+        <div className="bg-pink-50 rounded-none px-8 py-12 text-center shadow-lg border border-pink-100 overflow-hidden relative">
           
           <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-pink-200 via-pink-50 to-transparent pointer-events-none" />
 
@@ -19,12 +19,12 @@ export function AboutCTA() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link to="/booking" className="w-full sm:w-auto" tabIndex={-1}>
-                <Button size="lg" className="w-full px-10 py-4 shadow-md text-lg">
+                <Button size="lg" className="w-full px-6 py-4 shadow-md text-lg">
                   Book Appointment
                 </Button>
               </Link>
               <Link to="/contact" className="w-full sm:w-auto" tabIndex={-1}>
-                <Button variant="outline" size="lg" className="w-full px-10 py-4 text-lg bg-white border-2">
+                <Button variant="outline" size="lg" className="w-full px-6 py-4 text-lg bg-white border-2">
                   Contact Us
                 </Button>
               </Link>

@@ -9,8 +9,8 @@ interface TestimonialCardProps {
 
 export function TestimonialCard({ testimonial }: TestimonialCardProps) {
   return (
-    <Card className="h-full bg-white hover:-translate-y-2 transition-transform duration-300 border-none shadow-sm hover:shadow-xl rounded-[2.5rem] overflow-hidden group border border-gray-50">
-      <CardContent className="p-8 md:p-10 flex flex-col h-full relative">
+    <Card className="h-full bg-white hover:-translate-y-2 transition-transform duration-300 border-none shadow-sm hover:shadow-xl rounded-none overflow-hidden group border border-gray-50">
+      <CardContent className="p-8 md:p-6 flex flex-col h-full relative">
         {/* Background Quote Icon */}
         <div className="absolute top-6 right-6 opacity-5 group-hover:opacity-10 transition-opacity duration-300">
           <svg className="w-20 h-20 text-purple-900" fill="currentColor" viewBox="0 0 24 24">

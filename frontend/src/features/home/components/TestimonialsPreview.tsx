@@ -1,9 +1,11 @@
+import { useState, useEffect } from 'react';
 import Container from '../../../components/ui/Container';
 import SectionTitle from '../../../components/ui/SectionTitle';
 import { Card, CardContent } from '../../../components/ui/Card';
+import api from '../../../services/api';
 
 // Sample testimonial data for the luxury salon
-const TESTIMONIALS = [
+const FALLBACK_TESTIMONIALS = [
   {
     id: 1,
     name: 'Sarah Johnson',
@@ -31,8 +33,32 @@ const TESTIMONIALS = [
 ];
 
 export function TestimonialsPreview() {
+  const [testimonials, setTestimonials] = useState<any[]>(FALLBACK_TESTIMONIALS);
+
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      try {
+        const response = await api.get('/testimonials');
+        if (response.data.data.length > 0) {
+          const apiTestimonials = response.data.data.map((item: any) => ({
+            id: item.id,
+            name: item.name,
+            role: item.role || 'Client',
+            content: item.content,
+            rating: item.rating,
+            initials: item.name.substring(0, 2).toUpperCase()
+          }));
+          setTestimonials(apiTestimonials.slice(0, 3));
+        }
+      } catch (error) {
+        console.error('Failed to fetch testimonials for preview:', error);
+      }
+    };
+    fetchTestimonials();
+  }, []);
+
   return (
-    <section className="py-20 lg:py-32 bg-pink-50/50">
+    <section className="py-12 lg:py-12 bg-pink-50/50">
       <Container>
         <SectionTitle 
           title="Client Love" 
@@ -40,8 +66,8 @@ export function TestimonialsPreview() {
         />
         
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 mt-16">
-          {TESTIMONIALS.map((t) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-6 mt-8">
+          {testimonials.map((t) => (
             <Card 
               key={t.id} 
               className="bg-white border-transparent shadow-md hover:shadow-xl transition-shadow duration-300 relative pt-6 overflow-hidden"

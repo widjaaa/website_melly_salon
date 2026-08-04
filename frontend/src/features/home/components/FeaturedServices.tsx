@@ -27,7 +27,7 @@ const SERVICES = [
 
 export function FeaturedServices() {
   return (
-    <section className="py-20 lg:py-32 bg-white">
+    <section className="py-12 lg:py-12 bg-white">
       <Container>
         <SectionTitle 
           title="Signature Services" 
@@ -35,7 +35,7 @@ export function FeaturedServices() {
         />
         
         {/* Responsive Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-6 mt-8">
           {SERVICES.map((service) => (
             <Card 
               key={service.id} 
@@ -80,9 +80,9 @@ export function FeaturedServices() {
         </div>
         
         {/* View All Button */}
-        <div className="mt-20 text-center">
+        <div className="mt-8 text-center">
           <Link to="/services" tabIndex={-1}>
-            <Button size="lg" className="px-12 py-4 text-base shadow-lg hover:shadow-xl shadow-purple-700/20">
+            <Button size="lg" className="px-6 py-4 text-base shadow-lg hover:shadow-xl shadow-purple-700/20">
               View All Services
             </Button>
           </Link>

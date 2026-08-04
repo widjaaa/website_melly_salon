@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 
 import MainLayout from "../layouts/MainLayout";
 
@@ -12,7 +12,40 @@ import ContactPage from "../pages/ContactPage";
 import BookingPage from "../pages/BookingPage";
 import NotFoundPage from "../pages/NotFoundPage";
 
+// Admin
+import AdminLayout from "../features/admin/layouts/AdminLayout";
+import AdminLoginPage from "../features/admin/pages/AdminLoginPage";
+import AdminDashboardPage from "../features/admin/pages/AdminDashboardPage";
+import AdminBookingsPage from "../features/admin/pages/AdminBookingsPage";
+import AdminContactsPage from "../features/admin/pages/AdminContactsPage";
+
 export const router = createBrowserRouter([
+    {
+        path: "/admin/login",
+        element: <AdminLoginPage />
+    },
+    {
+        path: "/admin",
+        element: <AdminLayout />,
+        children: [
+            {
+                index: true,
+                element: <Navigate to="/admin/dashboard" replace />
+            },
+            {
+                path: "dashboard",
+                element: <AdminDashboardPage />
+            },
+            {
+                path: "bookings",
+                element: <AdminBookingsPage />
+            },
+            {
+                path: "contacts",
+                element: <AdminContactsPage />
+            }
+        ]
+    },
     {
         path: "/",
         element: <MainLayout />,

@@ -43,11 +43,11 @@ const FEATURES = [
 
 export function WhyChooseUs() {
   return (
-    <section className="py-20 lg:py-32 bg-white">
+    <section className="py-12 lg:py-12 bg-white">
       <Container>
         <SectionTitle title="Why Choose Us" subtitle="The Melly Salon difference." />
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
           {FEATURES.map((feature, idx) => (
             <Card key={idx} className="bg-pink-50/40 border-transparent shadow-none hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
               <CardContent className="p-8 text-center flex flex-col items-center">

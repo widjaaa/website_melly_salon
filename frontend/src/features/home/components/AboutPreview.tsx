@@ -5,7 +5,7 @@ import { Button } from '../../../components/ui/Button';
 
 export function AboutPreview() {
   return (
-    <section className="py-20 lg:py-32 bg-gray-50 overflow-hidden">
+    <section className="py-12 lg:py-12 bg-gray-50 overflow-hidden">
       <Container>
         {/* Centered Section Title */}
         <SectionTitle 
@@ -14,15 +14,15 @@ export function AboutPreview() {
         />
         
         {/* Two-Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-center mt-8">
           
           {/* Image Column */}
           <div className="relative">
             {/* Decorative offset background shape */}
-            <div className="absolute inset-0 bg-purple-200 rounded-[2.5rem] transform -rotate-3 scale-105 opacity-60 pointer-events-none" aria-hidden="true" />
+            <div className="absolute inset-0 bg-purple-200 rounded-none transform -rotate-3 scale-105 opacity-60 pointer-events-none" aria-hidden="true" />
             
             {/* Main Image */}
-            <div className="relative rounded-[2.5rem] overflow-hidden shadow-xl aspect-square sm:aspect-[4/3] lg:aspect-square bg-white ring-4 ring-white">
+            <div className="relative rounded-none overflow-hidden shadow-xl aspect-square sm:aspect-[4/3] lg:aspect-square bg-white ring-4 ring-white">
               <img 
                 src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=800" 
                 alt="Luxurious interior of Melly Beauty Salon" 
@@ -48,7 +48,7 @@ export function AboutPreview() {
             </div>
             
             <Link to="/about" tabIndex={-1}>
-              <Button size="lg" className="px-10 py-3.5 shadow-md shadow-purple-700/10">
+              <Button size="lg" className="px-6 py-3.5 shadow-md shadow-purple-700/10">
                 Learn More
               </Button>
             </Link>

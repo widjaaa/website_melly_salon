@@ -34,13 +34,13 @@ const RELATED: ServiceType[] = [
 
 export function RelatedServices() {
   return (
-    <section className="py-20 lg:py-32 bg-white">
+    <section className="py-12 lg:py-12 bg-white">
       <Container>
         <SectionTitle 
           title="You May Also Like" 
           subtitle="Explore other premium services that perfectly complement your choice." 
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-6 mt-8">
           {RELATED.map(service => (
             <ServiceCard key={service.id} service={service} />
           ))}

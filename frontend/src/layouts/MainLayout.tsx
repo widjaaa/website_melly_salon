@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
+import { FloatingWhatsApp } from '../components/ui/FloatingWhatsApp';
 
 export default function MainLayout() {
   return (
@@ -13,6 +14,7 @@ export default function MainLayout() {
       </main>
 
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 }

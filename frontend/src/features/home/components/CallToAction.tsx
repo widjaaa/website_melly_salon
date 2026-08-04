@@ -4,10 +4,10 @@ import { Button } from '../../../components/ui/Button';
 
 export function CallToAction() {
   return (
-    <section className="py-20 lg:py-32 bg-white">
+    <section className="py-12 lg:py-12 bg-white">
       <Container>
         {/* Large container with gradient background and rounded corners */}
-        <div className="relative overflow-hidden rounded-[3rem] bg-gradient-to-br from-purple-800 via-purple-700 to-pink-600 px-8 py-20 md:px-16 md:py-28 text-center shadow-2xl">
+        <div className="relative overflow-hidden rounded-none bg-purple-800 px-8 py-12 md:px-6 md:py-12 text-center shadow-2xl">
           
           {/* Abstract wavy background pattern */}
           <div className="absolute inset-0 opacity-10 pointer-events-none" aria-hidden="true">
@@ -29,7 +29,7 @@ export function CallToAction() {
             </h2>
             
             {/* Supporting text */}
-            <p className="text-purple-100 text-lg md:text-xl mb-12 leading-relaxed max-w-2xl">
+            <p className="text-purple-100 text-lg md:text-xl mb-8 leading-relaxed max-w-2xl">
               Book your appointment today and let our expert stylists and beauty therapists bring out your true, radiant beauty. Spaces fill up quickly!
             </p>
             
@@ -40,7 +40,7 @@ export function CallToAction() {
                 {/* Overriding the default purple text to ensure contrast */}
                 <Button 
                   size="lg" 
-                  className="w-full bg-white !text-purple-700 hover:bg-gray-50 shadow-xl shadow-purple-900/20 px-10 py-4 text-lg border-transparent"
+                  className="w-full bg-white !text-purple-700 hover:bg-gray-50 shadow-xl shadow-purple-900/20 px-6 py-4 text-lg border-transparent"
                 >
                   Book Appointment
                 </Button>
@@ -51,7 +51,7 @@ export function CallToAction() {
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="w-full bg-transparent border-2 !border-white/40 !text-white hover:!bg-white/10 hover:!border-white px-10 py-4 text-lg transition-colors"
+                  className="w-full bg-transparent border-2 !border-white/40 !text-white hover:!bg-white/10 hover:!border-white px-6 py-4 text-lg transition-colors"
                 >
                   Contact Us
                 </Button>

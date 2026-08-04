@@ -1,10 +1,12 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Container from '../../../components/ui/Container';
 import SectionTitle from '../../../components/ui/SectionTitle';
 import { Button } from '../../../components/ui/Button';
+import api from '../../../services/api';
 
 // High-quality Unsplash image placeholders matching the luxury beauty theme
-const IMAGES = [
+const FALLBACK_IMAGES = [
   'https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&q=80&w=600',
   'https://images.unsplash.com/photo-1516975080661-46bd8e2b8bc5?auto=format&fit=crop&q=80&w=600',
   'https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&q=80&w=600',
@@ -14,8 +16,26 @@ const IMAGES = [
 ];
 
 export function GalleryPreview() {
+  const [images, setImages] = useState<string[]>(FALLBACK_IMAGES);
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      try {
+        const response = await api.get('/galleries');
+        if (response.data.data.length > 0) {
+          const apiImages = response.data.data.map((item: any) => item.image_url);
+          // take up to 6 images
+          setImages(apiImages.slice(0, 6));
+        }
+      } catch (error) {
+        console.error('Failed to fetch gallery for preview:', error);
+      }
+    };
+    fetchImages();
+  }, []);
+
   return (
-    <section className="py-20 lg:py-32 bg-gray-50/30">
+    <section className="py-12 lg:py-12 bg-gray-50/30">
       <Container>
         <SectionTitle 
           title="A Glimpse of Beauty" 
@@ -23,11 +43,11 @@ export function GalleryPreview() {
         />
         
         {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6 mt-16">
-          {IMAGES.map((img, idx) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6 mt-8">
+          {images.map((img, idx) => (
             <div 
               key={idx} 
-              className="relative group rounded-3xl overflow-hidden aspect-square cursor-pointer shadow-sm hover:shadow-2xl transition-all duration-500 bg-gray-100"
+              className="relative group rounded-none overflow-hidden aspect-square cursor-pointer shadow-sm hover:shadow-2xl transition-all duration-500 bg-gray-100"
             >
               {/* Image with zoom and slight rotate effect */}
               <img 
@@ -48,12 +68,12 @@ export function GalleryPreview() {
         </div>
 
         {/* Call to Action to full gallery */}
-        <div className="mt-16 text-center">
+        <div className="mt-8 text-center">
           <Link to="/gallery" tabIndex={-1}>
             <Button 
               size="lg" 
               variant="secondary" 
-              className="px-12 py-4 text-base shadow-sm hover:shadow-md transition-shadow"
+              className="px-6 py-4 text-base shadow-sm hover:shadow-md transition-shadow"
             >
               View Full Gallery
             </Button>

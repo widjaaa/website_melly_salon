@@ -18,7 +18,7 @@ interface Props {
 
 export function ServiceCard({ service }: Props) {
   return (
-    <Card className="flex flex-col h-full bg-white border-transparent shadow hover:shadow-xl transition-all duration-300 overflow-hidden group rounded-[2rem]">
+    <Card className="flex flex-col h-full bg-white border-transparent shadow hover:shadow-xl transition-all duration-300 overflow-hidden group rounded-none">
       {/* Image Header */}
       <div className="relative h-56 overflow-hidden bg-gray-100">
         <img 

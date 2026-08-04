@@ -22,11 +22,11 @@ const TEAM = [
 
 export function TeamSection() {
   return (
-    <section className="py-20 lg:py-32 bg-gray-50/50">
+    <section className="py-12 lg:py-12 bg-gray-50/50">
       <Container>
         <SectionTitle title="Meet Our Experts" subtitle="The talented professionals behind your radiant look." />
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
           {TEAM.map((member, idx) => (
             <Card key={idx} className="bg-white border-transparent shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 overflow-hidden group">
               <div className="h-80 lg:h-96 overflow-hidden relative">

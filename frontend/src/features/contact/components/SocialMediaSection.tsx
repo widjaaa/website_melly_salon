@@ -9,17 +9,17 @@ const SOCIALS = [
 
 export function SocialMediaSection() {
   return (
-    <section className="py-24 bg-gray-50/50">
+    <section className="py-12 bg-gray-50/50">
       <Container>
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">Connect With Us</h2>
           <p className="text-lg text-gray-500 leading-relaxed">Follow our social media for daily beauty inspiration, special offers, and behind-the-scenes magic.</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6">
           {SOCIALS.map((social, idx) => (
             <a key={idx} href={social.link} className="block group">
-              <div className="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col items-center text-center h-full">
+              <div className="bg-white p-8 rounded-none border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col items-center text-center h-full">
                 <div className={`w-20 h-20 rounded-full flex items-center justify-center text-3xl mb-6 shadow-inner ${social.color}`}>
                   {social.icon}
                 </div>

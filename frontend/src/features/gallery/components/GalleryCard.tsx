@@ -9,7 +9,7 @@ interface GalleryCardProps {
 export function GalleryCard({ item, onClick }: GalleryCardProps) {
   return (
     <div 
-      className="group relative rounded-[2rem] overflow-hidden cursor-pointer shadow-sm hover:shadow-2xl transition-all duration-500 aspect-square"
+      className="group relative rounded-none overflow-hidden cursor-pointer shadow-sm hover:shadow-2xl transition-all duration-500 aspect-square"
       onClick={onClick}
     >
       {/* Image */}

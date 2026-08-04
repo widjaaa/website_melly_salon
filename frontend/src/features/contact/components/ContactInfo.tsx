@@ -4,11 +4,11 @@ import { ContactCard } from './ContactCard';
 
 export function ContactInfo() {
   return (
-    <section className="py-20 bg-gray-50/50">
+    <section className="py-12 bg-gray-50/50">
       <Container>
         <SectionTitle title="Contact Information" subtitle="Reach out to us through any of these channels." />
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6 mt-8">
           <ContactCard 
             title="Address"
             details={['Jl. Sudirman No. 123', 'Jakarta Selatan, 12190']}
