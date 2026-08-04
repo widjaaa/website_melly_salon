@@ -9,24 +9,24 @@ const FALLBACK_TESTIMONIALS = [
   {
     id: 1,
     name: 'Sarah Johnson',
-    role: 'Bride',
-    content: '"The team at Melly Salon made my wedding day absolutely perfect. My makeup stayed flawless all night and I felt like a true princess."',
+    role: 'Pengantin',
+    content: '"Tim Melly Salon membuat hari pernikahanku benar-benar sempurna. Riasanku tetap memukau sepanjang malam dan aku merasa seperti putri sungguhan."',
     rating: 5,
     initials: 'SJ'
   },
   {
     id: 2,
     name: 'Emily Davis',
-    role: 'Regular Client',
-    content: '"I always leave feeling refreshed and beautiful. The premium spa treatments are simply out of this world. Highly recommended!"',
+    role: 'Klien Tetap',
+    content: '"Aku selalu pulang dengan perasaan segar dan cantik. Perawatan spa premiumnya luar biasa. Sangat direkomendasikan!"',
     rating: 5,
     initials: 'ED'
   },
   {
     id: 3,
     name: 'Jessica Lee',
-    role: 'Event Attendee',
-    content: '"Professional, spotless, and incredibly talented staff. They really listen to what you want and deliver beautifully every single time."',
+    role: 'Peserta Acara',
+    content: '"Staf yang profesional, bersih, dan sangat berbakat. Mereka benar-benar mendengarkan apa yang Anda inginkan dan mewujudkannya dengan indah setiap saat."',
     rating: 5,
     initials: 'JL'
   },
@@ -43,7 +43,7 @@ export function TestimonialsPreview() {
           const apiTestimonials = response.data.data.map((item: any) => ({
             id: item.id,
             name: item.name,
-            role: item.role || 'Client',
+            role: item.role || 'Klien',
             content: item.content,
             rating: item.rating,
             initials: item.name.substring(0, 2).toUpperCase()
@@ -61,8 +61,8 @@ export function TestimonialsPreview() {
     <section className="py-12 lg:py-12 bg-pink-50/50">
       <Container>
         <SectionTitle 
-          title="Client Love" 
-          subtitle="Hear what our gorgeous clients have to say about their experiences."
+          title="Ulasan Klien" 
+          subtitle="Dengarkan apa yang dikatakan klien-klien cantik kami tentang pengalaman mereka."
         />
         
         {/* Testimonials Grid */}

@@ -12,20 +12,20 @@ export function AboutCTA() {
 
           <div className="max-w-3xl mx-auto relative z-10">
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight leading-tight">
-              Ready to Experience Professional Beauty Care?
+              Siap Merasakan Perawatan Kecantikan Profesional?
             </h2>
             <p className="text-gray-600 text-lg md:text-xl mb-10 leading-relaxed">
-              Join thousands of satisfied clients who trust us with their beauty needs. Let our team of professionals pamper you today.
+              Bergabunglah dengan ribuan klien yang mempercayakan kebutuhan kecantikan mereka kepada kami. Biarkan tim profesional kami memanjakan Anda hari ini.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link to="/booking" className="w-full sm:w-auto" tabIndex={-1}>
                 <Button size="lg" className="w-full px-6 py-4 shadow-md text-lg">
-                  Book Appointment
+                  Booking Sekarang
                 </Button>
               </Link>
               <Link to="/contact" className="w-full sm:w-auto" tabIndex={-1}>
                 <Button variant="outline" size="lg" className="w-full px-6 py-4 text-lg bg-white border-2">
-                  Contact Us
+                  Hubungi Kami
                 </Button>
               </Link>
             </div>

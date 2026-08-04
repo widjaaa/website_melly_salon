@@ -27,7 +27,7 @@ export default function AdminLoginPage() {
         
         Swal.fire({
           icon: 'success',
-          title: 'Login Successful',
+          title: 'Login Berhasil',
           toast: true,
           position: 'top-end',
           showConfirmButton: false,
@@ -38,7 +38,7 @@ export default function AdminLoginPage() {
       }
     } catch (error: any) {
       console.error('Login failed:', error);
-      setErrorMsg(error.response?.data?.message || 'Failed to login. Please try again.');
+      setErrorMsg(error.response?.data?.message || 'Gagal login. Silakan coba lagi.');
     }
   };
 
@@ -46,10 +46,10 @@ export default function AdminLoginPage() {
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          Admin Panel
+          Panel Admin
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
-          Sign in to manage Melly Salon
+          Masuk untuk mengelola Melly Salon
         </p>
       </div>
 
@@ -64,20 +64,20 @@ export default function AdminLoginPage() {
             )}
             
             <Input 
-              label="Email address"
+              label="Alamat Email"
               type="email"
               {...register('email', { required: true })}
             />
 
             <Input 
-              label="Password"
+              label="Kata Sandi"
               type="password"
               {...register('password', { required: true })}
             />
 
             <div>
               <Button type="submit" className="w-full" disabled={isSubmitting}>
-                {isSubmitting ? 'Signing in...' : 'Sign in'}
+                {isSubmitting ? 'Sedang Masuk...' : 'Masuk'}
               </Button>
             </div>
           </form>

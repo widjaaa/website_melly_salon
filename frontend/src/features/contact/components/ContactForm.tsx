@@ -21,8 +21,8 @@ export function ContactForm() {
 
   const onSubmit = async (data: ContactFormData) => {
     Swal.fire({
-      title: 'Sending Message...',
-      text: 'Please wait a moment.',
+      title: 'Mengirim Pesan...',
+      text: 'Mohon tunggu sebentar.',
       allowOutsideClick: false,
       showConfirmButton: false,
       didOpen: () => Swal.showLoading(),
@@ -45,8 +45,8 @@ export function ContactForm() {
       console.error('Failed to send message:', error);
       Swal.fire({
         icon: 'error',
-        title: 'Oops...',
-        text: 'Something went wrong! Please try again later.',
+        title: 'Ups...',
+        text: 'Terjadi kesalahan! Silakan coba lagi nanti.',
       });
     }
   };
@@ -59,8 +59,8 @@ export function ContactForm() {
             <CardContent className="p-8 md:p-6 lg:p-6">
               
               <div className="text-center mb-8">
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3 tracking-tight">Send Us A Message</h2>
-                <p className="text-gray-500 text-lg">We would love to hear from you. Fill out the form and we will be in touch shortly.</p>
+                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3 tracking-tight">Kirimkan Pesan Kepada Kami</h2>
+                <p className="text-gray-500 text-lg">Kami sangat ingin mendengar dari Anda. Isi formulir dan kami akan segera menghubungi Anda.</p>
               </div>
               
               {isSuccess ? (
@@ -70,20 +70,20 @@ export function ContactForm() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold mb-3 text-green-900">Message Sent Successfully!</h3>
-                  <p className="text-green-700 text-lg">Thank you for reaching out. Our team will get back to you within 24 hours.</p>
+                  <h3 className="text-2xl font-bold mb-3 text-green-900">Pesan Berhasil Terkirim!</h3>
+                  <p className="text-green-700 text-lg">Terima kasih telah menghubungi kami. Tim kami akan membalas pesan Anda dalam waktu 24 jam.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <Input 
-                      label="Full Name *" 
-                      placeholder="e.g. Jane Doe" 
+                      label="Nama Lengkap *" 
+                      placeholder="Cth. Siti Aminah" 
                       {...register('fullName')} 
                       error={errors.fullName?.message}
                     />
                     <Input 
-                      label="Phone Number *" 
+                      label="Nomor Telepon *" 
                       placeholder="+62 812 3456 7890" 
                       {...register('phoneNumber')} 
                       error={errors.phoneNumber?.message}
@@ -91,16 +91,16 @@ export function ContactForm() {
                   </div>
                   
                   <Input 
-                    label="Email Address *" 
+                    label="Alamat Email *" 
                     type="email" 
-                    placeholder="jane@example.com" 
+                    placeholder="siti@example.com" 
                     {...register('email')} 
                     error={errors.email?.message}
                   />
                   
                   <TextArea 
-                    label="Your Message *" 
-                    placeholder="How can we help you today?" 
+                    label="Pesan Anda *" 
+                    placeholder="Bagaimana kami bisa membantu Anda hari ini?" 
                     rows={5} 
                     {...register('message')} 
                     error={errors.message?.message}
@@ -113,7 +113,7 @@ export function ContactForm() {
                       className="w-full text-lg py-5 shadow-xl shadow-purple-900/20 font-bold"
                       disabled={isSubmitting}
                     >
-                      {isSubmitting ? 'Sending Message...' : 'Send Message'}
+                      {isSubmitting ? 'Mengirim Pesan...' : 'Kirim Pesan'}
                     </Button>
                   </div>
                 </form>

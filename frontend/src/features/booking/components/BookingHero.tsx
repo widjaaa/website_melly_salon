@@ -5,10 +5,10 @@ export function BookingHero() {
       
       <div className="relative z-10 max-w-3xl mx-auto pt-10">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-          Book an Appointment
+          Booking Perawatan
         </h1>
         <p className="text-lg md:text-xl text-purple-100 max-w-2xl mx-auto leading-relaxed">
-          Reserve your spot today and let our expert beauticians pamper you in our luxury sanctuary.
+          Reservasi jadwal Anda hari ini dan biarkan ahli kecantikan kami memanjakan Anda di tempat mewah kami.
         </p>
       </div>
     </section>

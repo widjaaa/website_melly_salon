@@ -38,8 +38,8 @@ export function BookingForm() {
   const onSubmit = async (data: BookingFormData) => {
     // Show SweetAlert2 loading state
     Swal.fire({
-      title: 'Processing Request...',
-      text: 'Please wait while we secure your appointment.',
+      title: 'Memproses Permintaan...',
+      text: 'Mohon tunggu sementara kami mengamankan jadwal Anda.',
       allowOutsideClick: false,
       showConfirmButton: false,
       didOpen: () => {
@@ -69,10 +69,10 @@ export function BookingForm() {
       // Handle validation errors from Laravel (422)
       if (error.response?.status === 422) {
         const laravelErrors = error.response.data.errors as Record<string, string[]>;
-        const firstError = Object.values(laravelErrors)[0]?.[0] ?? 'Validation failed.';
+        const firstError = Object.values(laravelErrors)[0]?.[0] ?? 'Validasi gagal.';
         Swal.fire({
           icon: 'error',
-          title: 'Please Check Your Details',
+          title: 'Harap Periksa Detail Anda',
           text: firstError,
           confirmButtonColor: '#7e22ce',
         });
@@ -80,8 +80,8 @@ export function BookingForm() {
         // Generic network or server error
         Swal.fire({
           icon: 'error',
-          title: 'Something Went Wrong',
-          text: 'We could not process your booking. Please check your connection and try again.',
+          title: 'Terjadi Kesalahan',
+          text: 'Kami tidak dapat memproses booking Anda. Harap periksa koneksi Anda dan coba lagi.',
           confirmButtonColor: '#7e22ce',
         });
       }
@@ -100,10 +100,10 @@ export function BookingForm() {
         <Card className="bg-white border-transparent shadow-2xl shadow-purple-900/5 rounded-none overflow-hidden w-full">
           <CardContent className="p-8 md:p-6 lg:p-6">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3 tracking-tight">
-              Your Details
+              Detail Anda
             </h2>
             <p className="text-gray-500 text-lg mb-10 lg:mb-8">
-              Please fill out the form below to request an appointment.
+              Silakan isi formulir di bawah ini untuk memesan jadwal perawatan.
             </p>
 
             <FormProvider {...methods}>
@@ -119,8 +119,8 @@ export function BookingForm() {
                     disabled={methods.formState.isSubmitting}
                   >
                     {methods.formState.isSubmitting
-                      ? 'Confirming Appointment...'
-                      : 'Confirm Appointment'}
+                      ? 'Mengonfirmasi Booking...'
+                      : 'Konfirmasi Booking'}
                   </Button>
                 </div>
 

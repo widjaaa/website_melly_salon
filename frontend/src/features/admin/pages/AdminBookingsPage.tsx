@@ -29,7 +29,7 @@ export default function AdminBookingsPage() {
       await api.put(`/admin/bookings/${id}`, { status: newStatus });
       Swal.fire({
         icon: 'success',
-        title: 'Status Updated',
+        title: 'Status Diperbarui',
         toast: true,
         position: 'top-end',
         showConfirmButton: false,
@@ -37,7 +37,7 @@ export default function AdminBookingsPage() {
       });
       fetchBookings(); // refresh
     } catch (error) {
-      Swal.fire('Error', 'Failed to update status', 'error');
+      Swal.fire('Error', 'Gagal memperbarui status', 'error');
     }
   };
 
@@ -52,30 +52,30 @@ export default function AdminBookingsPage() {
   };
 
   if (loading) {
-    return <div>Loading bookings...</div>;
+    return <div>Memuat booking...</div>;
   }
 
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-bold text-gray-900">Manage Bookings</h2>
+        <h2 className="text-2xl font-bold text-gray-900">Kelola Booking</h2>
       </div>
 
       <div className="bg-white shadow-sm rounded-none overflow-hidden border border-gray-200">
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Client</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Service</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date/Time</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Klien</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Perawatan</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tanggal/Waktu</th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-              <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+              <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
             {bookings.length === 0 ? (
               <tr>
-                <td colSpan={5} className="px-6 py-10 text-center text-gray-500">No bookings found.</td>
+                <td colSpan={5} className="px-6 py-10 text-center text-gray-500">Tidak ada booking ditemukan.</td>
               </tr>
             ) : (
               bookings.map((booking) => (
@@ -103,10 +103,10 @@ export default function AdminBookingsPage() {
                       value={booking.status}
                       onChange={(e) => handleUpdateStatus(booking.id, booking.status, e.target.value)}
                     >
-                      <option value="pending">Pending</option>
-                      <option value="confirmed">Confirmed</option>
-                      <option value="completed">Completed</option>
-                      <option value="cancelled">Cancelled</option>
+                      <option value="pending">Menunggu</option>
+                      <option value="confirmed">Dikonfirmasi</option>
+                      <option value="completed">Selesai</option>
+                      <option value="cancelled">Dibatalkan</option>
                     </select>
                   </td>
                 </tr>

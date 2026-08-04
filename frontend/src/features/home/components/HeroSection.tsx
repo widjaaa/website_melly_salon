@@ -23,18 +23,18 @@ export function HeroSection() {
             {/* Small Badge */}
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-pink-50 border border-pink-100 shadow-sm">
               <span className="text-sm font-semibold text-purple-700 tracking-wide uppercase">
-                Beauty & Wedding Specialist
+                Spesialis Kecantikan & Pernikahan
               </span>
             </div>
             
             {/* Main Heading */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight tracking-tight">
-              Enhance Your Beauty With <span className="text-purple-700">Professional Care</span>
+              Pancarkan Kecantikan Anda Dengan <span className="text-purple-700">Perawatan Profesional</span>
             </h1>
             
             {/* Supporting Text */}
             <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-xl">
-              Experience premium beauty treatments and wedding services designed to make your special moments unforgettable.
+              Nikmati perawatan kecantikan premium dan layanan pernikahan yang dirancang untuk membuat momen spesial Anda tak terlupakan.
             </p>
             
             {/* Call to Action Buttons */}
@@ -44,7 +44,7 @@ export function HeroSection() {
                   size="lg" 
                   className="w-full sm:w-auto px-8 py-3.5 text-base shadow-lg shadow-purple-700/20 hover:shadow-purple-700/30"
                 >
-                  Book Appointment
+                  Booking Sekarang
                 </Button>
               </Link>
               <Link to="/services" className="w-full sm:w-auto" tabIndex={-1}>
@@ -53,7 +53,7 @@ export function HeroSection() {
                   size="lg" 
                   className="w-full sm:w-auto px-8 py-3.5 text-base bg-white hover:bg-purple-50"
                 >
-                  View Services
+                  Lihat Perawatan
                 </Button>
               </Link>
             </div>

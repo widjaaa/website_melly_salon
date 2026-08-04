@@ -9,13 +9,13 @@ export function BookingSuccess() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
         </svg>
       </div>
-      <h2 className="text-4xl font-bold text-gray-900 mb-4 tracking-tight">Thank You!</h2>
+      <h2 className="text-4xl font-bold text-gray-900 mb-4 tracking-tight">Terima Kasih!</h2>
       <p className="text-lg text-gray-600 mb-10 max-w-md mx-auto leading-relaxed">
-        Your appointment request has been received successfully. Our team will review your details and contact you shortly to confirm your booking.
+        Permintaan booking Anda telah berhasil diterima. Tim kami akan meninjau detail Anda dan segera menghubungi Anda untuk mengonfirmasi booking Anda.
       </p>
       <Link to="/" tabIndex={-1}>
         <Button size="lg" className="px-6 py-4 shadow-md bg-gray-900 hover:bg-gray-800 border-none font-semibold text-lg text-white">
-          Back to Home
+          Kembali ke Beranda
         </Button>
       </Link>
     </div>

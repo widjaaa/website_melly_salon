@@ -6,10 +6,10 @@ export function ServicesHero() {
       
       <div className="relative z-10 max-w-3xl mx-auto pt-10">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-          Our Services
+          Perawatan Kami
         </h1>
         <p className="text-lg md:text-xl text-purple-100 max-w-2xl mx-auto leading-relaxed">
-          Discover premium beauty treatments designed to enhance your confidence and elegance.
+          Temukan perawatan kecantikan premium yang dirancang untuk memancarkan kepercayaan diri dan keanggunan Anda.
         </p>
       </div>
     </section>

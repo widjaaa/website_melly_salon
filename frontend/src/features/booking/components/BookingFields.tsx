@@ -57,14 +57,13 @@ export function BookingFields({ onServiceChange }: BookingFieldsProps) {
       {/* Contact Info */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Input
-          label="Full Name *"
-          placeholder="e.g. Jane Doe"
+          label="Nama Lengkap *"
+          placeholder="Cth. Siti Aminah"
           {...register('fullName')}
           error={errors.fullName?.message}
         />
         <Input
-          label="Phone Number *"
-          placeholder="+62 812 3456 7890"
+          label="Nomor Telepon *"
           {...register('phoneNumber')}
           error={errors.phoneNumber?.message}
         />
@@ -72,9 +71,9 @@ export function BookingFields({ onServiceChange }: BookingFieldsProps) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Input
-          label="Email Address *"
+          label="Alamat Email *"
           type="email"
-          placeholder="jane@example.com"
+          placeholder="siti@example.com"
           {...register('email')}
           error={errors.email?.message}
         />
@@ -82,7 +81,7 @@ export function BookingFields({ onServiceChange }: BookingFieldsProps) {
         {/* Service Select — grouped by category, fetched from API */}
         <div className="w-full">
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Select Service *
+            Pilih Perawatan *
           </label>
           <select
             {...register('service')}
@@ -94,14 +93,14 @@ export function BookingFields({ onServiceChange }: BookingFieldsProps) {
             disabled={loadingServices}
           >
             <option value="">
-              {loadingServices ? 'Loading services...' : '-- Choose a service --'}
+              {loadingServices ? 'Memuat perawatan...' : '-- Pilih perawatan --'}
             </option>
 
             {Object.entries(servicesByCategory).map(([categoryName, services]) => (
               <optgroup key={categoryName} label={categoryName}>
                 {services.map((service) => (
                   <option key={service.id} value={service.name}>
-                    {service.name} — {service.price} ({service.duration} mins)
+                    {service.name} — {service.price} ({service.duration} menit)
                   </option>
                 ))}
               </optgroup>
@@ -116,14 +115,14 @@ export function BookingFields({ onServiceChange }: BookingFieldsProps) {
       {/* Date & Time */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Input
-          label="Preferred Date *"
+          label="Tanggal Pilihan *"
           type="date"
           {...register('preferredDate')}
           error={errors.preferredDate?.message}
         />
         <div className="w-full">
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Preferred Time *
+            Waktu Pilihan *
           </label>
           <select
             {...register('preferredTime')}
@@ -133,7 +132,7 @@ export function BookingFields({ onServiceChange }: BookingFieldsProps) {
                 : 'focus:bg-white'
             }`}
           >
-            <option value="">-- Choose a time --</option>
+            <option value="">-- Pilih waktu --</option>
             <option value="09:00 AM">09:00 AM</option>
             <option value="10:00 AM">10:00 AM</option>
             <option value="11:00 AM">11:00 AM</option>
@@ -150,8 +149,8 @@ export function BookingFields({ onServiceChange }: BookingFieldsProps) {
 
       {/* Additional Notes */}
       <TextArea
-        label="Additional Notes (Optional)"
-        placeholder="Any specific requests, allergies, or conditions we should know about?"
+        label="Catatan Tambahan (Opsional)"
+        placeholder="Ada permintaan khusus, alergi, atau kondisi yang perlu kami ketahui?"
         rows={4}
         {...register('additionalNotes')}
         error={errors.additionalNotes?.message}

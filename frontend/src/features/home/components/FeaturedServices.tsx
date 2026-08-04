@@ -7,20 +7,20 @@ import { Button } from '../../../components/ui/Button';
 const SERVICES = [
   {
     id: 'hair-styling',
-    title: 'Hair Styling',
-    description: 'Expert cuts, luxurious coloring, and treatments tailored perfectly to your unique features and lifestyle.',
+    title: 'Tata Rambut',
+    description: 'Potongan rambut ahli, pewarnaan mewah, dan perawatan yang disesuaikan dengan fitur dan gaya hidup unik Anda.',
     image: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=600',
   },
   {
     id: 'makeup',
-    title: 'Makeup Application',
-    description: 'Flawless, long-lasting premium makeup application for any occasion to make you shine with confidence.',
+    title: 'Rias Wajah',
+    description: 'Riasan premium yang sempurna dan tahan lama untuk acara apa pun agar Anda tampil percaya diri.',
     image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=600',
   },
   {
     id: 'wedding-package',
-    title: 'Wedding Packages',
-    description: 'Comprehensive bridal beauty packages ensuring you and your party look stunning on your special day.',
+    title: 'Paket Pernikahan',
+    description: 'Paket kecantikan pengantin komprehensif untuk memastikan Anda dan rombongan tampil memukau di hari spesial.',
     image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&q=80&w=600',
   },
 ];
@@ -30,8 +30,8 @@ export function FeaturedServices() {
     <section className="py-12 lg:py-12 bg-white">
       <Container>
         <SectionTitle 
-          title="Signature Services" 
-          subtitle="Experience the pinnacle of beauty and relaxation with our most sought-after treatments."
+          title="Perawatan Unggulan" 
+          subtitle="Nikmati puncak kecantikan dan relaksasi dengan perawatan kami yang paling diminati."
         />
         
         {/* Responsive Grid */}
@@ -71,7 +71,7 @@ export function FeaturedServices() {
                     variant="outline" 
                     className="px-8 border-2 hover:bg-purple-700 hover:text-white transition-all duration-300"
                   >
-                    View Details
+                    Lihat Detail
                   </Button>
                 </Link>
               </CardFooter>
@@ -83,7 +83,7 @@ export function FeaturedServices() {
         <div className="mt-8 text-center">
           <Link to="/services" tabIndex={-1}>
             <Button size="lg" className="px-6 py-4 text-base shadow-lg hover:shadow-xl shadow-purple-700/20">
-              View All Services
+              Lihat Semua Perawatan
             </Button>
           </Link>
         </div>

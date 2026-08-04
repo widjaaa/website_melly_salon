@@ -9,8 +9,8 @@ export function AboutPreview() {
       <Container>
         {/* Centered Section Title */}
         <SectionTitle 
-          title="About Melly Beauty Salon" 
-          subtitle="A sanctuary of elegance and professional care."
+          title="Tentang Melly Beauty Salon" 
+          subtitle="Tempat yang memadukan keanggunan dan perawatan profesional."
         />
         
         {/* Two-Column Layout */}
@@ -35,21 +35,21 @@ export function AboutPreview() {
           {/* Text Content Column */}
           <div className="flex flex-col items-start">
             <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-6 tracking-tight">
-              Dedicated to perfection in every detail.
+              Berdedikasi pada kesempurnaan di setiap detail.
             </h3>
             
             <div className="space-y-6 text-gray-600 text-lg leading-relaxed mb-10">
               <p>
-                Founded on the belief that beauty is an expression of individuality, Melly Beauty Salon offers a curated selection of premium treatments designed to bring out your natural glow. Our expert team of stylists, colorists, and beauty therapists are masters of their craft.
+                Didirikan dengan keyakinan bahwa kecantikan adalah ekspresi individualitas, Melly Beauty Salon menawarkan pilihan perawatan premium yang dirancang untuk memancarkan pesona alami Anda. Tim ahli kami yang terdiri dari penata gaya, ahli warna, dan terapis kecantikan adalah master di bidangnya.
               </p>
               <p>
-                Whether you are preparing for your wedding day or simply taking a well-deserved moment for yourself, we provide a relaxing, luxurious atmosphere where you are our absolute priority. We use only the finest industry products to guarantee flawless, long-lasting results.
+                Baik Anda sedang bersiap untuk hari pernikahan atau sekadar memanjakan diri sendiri, kami menyediakan suasana mewah dan menenangkan di mana Anda adalah prioritas utama kami. Kami hanya menggunakan produk terbaik untuk menjamin hasil yang sempurna dan tahan lama.
               </p>
             </div>
             
             <Link to="/about" tabIndex={-1}>
               <Button size="lg" className="px-6 py-3.5 shadow-md shadow-purple-700/10">
-                Learn More
+                Baca Selengkapnya
               </Button>
             </Link>
           </div>

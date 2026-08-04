@@ -50,10 +50,10 @@ export function ServiceSummary({ selectedServiceName }: ServiceSummaryProps) {
   }, [selectedServiceName, allServices]);
 
   const formatDuration = (minutes: number): string => {
-    if (minutes < 60) return `${minutes} mins`;
+    if (minutes < 60) return `${minutes} menit`;
     const h = Math.floor(minutes / 60);
     const m = minutes % 60;
-    return m > 0 ? `${h} hr ${m} mins` : `${h} hr`;
+    return m > 0 ? `${h} jam ${m} menit` : `${h} jam`;
   };
 
   return (
@@ -66,27 +66,27 @@ export function ServiceSummary({ selectedServiceName }: ServiceSummaryProps) {
       />
 
       <CardHeader className="p-8 pb-4">
-        <CardTitle className="text-2xl font-bold text-gray-900">Summary</CardTitle>
+        <CardTitle className="text-2xl font-bold text-gray-900">Ringkasan</CardTitle>
       </CardHeader>
 
       <CardContent className="p-8 pt-0 flex flex-col gap-5">
 
         {/* Service Name Row */}
         <div className="flex justify-between items-start border-b border-gray-100 pb-5 gap-4">
-          <span className="text-gray-500 font-medium text-base shrink-0">Service</span>
+          <span className="text-gray-500 font-medium text-base shrink-0">Perawatan</span>
           <span
             className={`font-bold text-right text-base transition-colors duration-300 ${
               selectedService ? 'text-gray-900' : 'text-gray-400 italic'
             }`}
           >
-            {selectedService ? selectedService.name : 'Not selected yet'}
+            {selectedService ? selectedService.name : 'Belum dipilih'}
           </span>
         </div>
 
         {/* Category Row */}
         {selectedService && (
           <div className="flex justify-between items-center border-b border-gray-100 pb-5">
-            <span className="text-gray-500 font-medium text-base">Category</span>
+            <span className="text-gray-500 font-medium text-base">Kategori</span>
             <span className="font-semibold text-purple-700 text-base bg-purple-50 px-3 py-1 rounded-full text-sm">
               {selectedService.category}
             </span>
@@ -95,7 +95,7 @@ export function ServiceSummary({ selectedServiceName }: ServiceSummaryProps) {
 
         {/* Duration Row */}
         <div className="flex justify-between items-center border-b border-gray-100 pb-5">
-          <span className="text-gray-500 font-medium text-base">Duration</span>
+          <span className="text-gray-500 font-medium text-base">Durasi</span>
           <span className={`font-bold text-base ${selectedService ? 'text-gray-900' : 'text-gray-400 italic'}`}>
             {selectedService ? formatDuration(selectedService.duration) : '~'}
           </span>
@@ -103,13 +103,13 @@ export function ServiceSummary({ selectedServiceName }: ServiceSummaryProps) {
 
         {/* Price Row */}
         <div className="flex justify-between items-center pb-2 pt-1">
-          <span className="text-gray-900 font-bold text-lg">Estimated</span>
+          <span className="text-gray-900 font-bold text-lg">Estimasi Biaya</span>
           <span
             className={`font-black text-3xl transition-all duration-300 ${
               selectedService ? 'text-purple-700' : 'text-gray-400'
             }`}
           >
-            {selectedService ? selectedService.price : 'TBD'}
+            {selectedService ? selectedService.price : 'Belum Ditentukan'}
           </span>
         </div>
 

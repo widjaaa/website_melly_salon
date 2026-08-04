@@ -38,8 +38,8 @@ export function GalleryPreview() {
     <section className="py-12 lg:py-12 bg-gray-50/30">
       <Container>
         <SectionTitle 
-          title="A Glimpse of Beauty" 
-          subtitle="Explore our portfolio of stunning transformations and our luxurious salon space."
+          title="Sekilas Kecantikan" 
+          subtitle="Jelajahi portofolio transformasi memukau dan ruang salon mewah kami."
         />
         
         {/* Gallery Grid */}
@@ -60,7 +60,7 @@ export function GalleryPreview() {
               {/* Purple gradient overlay & animated text on hover */}
               <div className="absolute inset-0 bg-gradient-to-t from-purple-900/70 via-purple-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
                  <span className="text-white font-medium tracking-wide opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">
-                   View Full Image
+                   Lihat Gambar Penuh
                  </span>
               </div>
             </div>
@@ -75,7 +75,7 @@ export function GalleryPreview() {
               variant="secondary" 
               className="px-6 py-4 text-base shadow-sm hover:shadow-md transition-shadow"
             >
-              View Full Gallery
+              Lihat Semua Galeri
             </Button>
           </Link>
         </div>

@@ -18,6 +18,9 @@ import AdminLoginPage from "../features/admin/pages/AdminLoginPage";
 import AdminDashboardPage from "../features/admin/pages/AdminDashboardPage";
 import AdminBookingsPage from "../features/admin/pages/AdminBookingsPage";
 import AdminContactsPage from "../features/admin/pages/AdminContactsPage";
+import AdminServicesPage from "../features/admin/pages/AdminServicesPage";
+import AdminGalleriesPage from "../features/admin/pages/AdminGalleriesPage";
+import AdminTestimonialsPage from "../features/admin/pages/AdminTestimonialsPage";
 
 export const router = createBrowserRouter([
     {
@@ -43,6 +46,18 @@ export const router = createBrowserRouter([
             {
                 path: "contacts",
                 element: <AdminContactsPage />
+            },
+            {
+                path: "services",
+                element: <AdminServicesPage />
+            },
+            {
+                path: "galleries",
+                element: <AdminGalleriesPage />
+            },
+            {
+                path: "testimonials",
+                element: <AdminTestimonialsPage />
             }
         ]
     },

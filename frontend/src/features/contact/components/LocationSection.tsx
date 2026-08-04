@@ -7,7 +7,7 @@ export function LocationSection() {
   return (
     <section className="py-12 bg-white">
       <Container>
-        <SectionTitle title="Visit Our Salon" subtitle="Find us easily right in the heart of the city." />
+        <SectionTitle title="Kunjungi Salon Kami" subtitle="Temukan kami dengan mudah tepat di jantung kota." />
         
         <div className="mt-8 bg-gray-50 rounded-none p-4 lg:p-8 flex flex-col lg:flex-row gap-6 relative overflow-hidden border border-gray-100">
           
@@ -33,7 +33,7 @@ export function LocationSection() {
               <CardContent className="p-8 lg:p-6 space-y-6">
                 <div>
                   <h3 className="text-3xl font-bold text-gray-900 mb-2">Melly Beauty Salon</h3>
-                  <p className="text-purple-600 font-medium text-lg">Premium Beauty Services</p>
+                  <p className="text-purple-600 font-medium text-lg">Layanan Kecantikan Premium</p>
                 </div>
                 
                 <div className="space-y-4 py-6 border-y border-gray-100">
@@ -52,7 +52,7 @@ export function LocationSection() {
 
                 <a href="https://maps.google.com" target="_blank" rel="noreferrer" className="block w-full" tabIndex={-1}>
                   <Button variant="outline" size="lg" className="w-full border-purple-200 text-purple-700 hover:bg-purple-50 hover:border-purple-300 shadow-sm py-4 text-lg">
-                    Open in Google Maps
+                    Buka di Google Maps
                   </Button>
                 </a>
               </CardContent>

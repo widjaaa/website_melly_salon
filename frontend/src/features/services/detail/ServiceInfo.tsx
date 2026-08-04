@@ -19,22 +19,22 @@ export function ServiceInfo() {
           {/* Service Details */}
           <div className="flex flex-col mt-8 lg:mt-0">
             <div className="inline-flex px-5 py-2 rounded-full bg-purple-100 text-purple-800 text-sm font-bold tracking-wide w-fit mb-6">
-              Signature Treatment
+              Perawatan Unggulan
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight tracking-tight">
-              Premium Hair Styling
+              Tata Rambut Premium
             </h1>
             
             <div className="text-gray-600 text-lg space-y-6 leading-relaxed">
               <p>
-                Experience the ultimate in luxury hair care. Our premium hair styling service goes beyond a simple cut; it's a personalized journey to discover your most flattering look, tailored explicitly to your facial structure and lifestyle.
+                Nikmati perawatan rambut mewah yang sesungguhnya. Layanan penataan rambut premium kami lebih dari sekadar potongan biasa; ini adalah perjalanan personal untuk menemukan gaya yang paling cocok, disesuaikan secara khusus dengan struktur wajah dan gaya hidup Anda.
               </p>
               <p>
-                Using only the finest, industry-leading products imported directly from premier European laboratories, our master stylists carefully assess your hair type to craft a style that is uniquely you. 
+                Menggunakan hanya produk terbaik dan terkemuka di industri yang diimpor langsung dari laboratorium utama Eropa, penata rambut ahli kami dengan cermat menilai jenis rambut Anda untuk merancang gaya yang khas Anda.
               </p>
               <p>
-                From elegant blowouts to intricate evening styles, we ensure you leave our salon feeling confident, rejuvenated, and absolutely stunning.
+                Dari penataan elegan hingga gaya malam yang menawan, kami memastikan Anda meninggalkan salon kami dengan perasaan percaya diri, segar, dan benar-benar memukau.
               </p>
             </div>
           </div>

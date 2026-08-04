@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
 const NAV_LINKS = [
-  { name: 'Home', path: '/' },
-  { name: 'About', path: '/about' },
-  { name: 'Services', path: '/services' },
-  { name: 'Gallery', path: '/gallery' },
-  { name: 'Testimonials', path: '/testimonials' },
-  { name: 'Contact', path: '/contact' },
+  { name: 'Beranda', path: '/' },
+  { name: 'Tentang Kami', path: '/about' },
+  { name: 'Perawatan', path: '/services' },
+  { name: 'Galeri', path: '/gallery' },
+  { name: 'Testimoni', path: '/testimonials' },
+  { name: 'Kontak', path: '/contact' },
 ];
 
 export function Navbar() {
@@ -64,7 +64,7 @@ export function Navbar() {
               to="/booking"
               className="inline-flex items-center justify-center px-5 py-2 border border-transparent text-sm font-medium rounded-full text-white bg-purple-700 hover:bg-purple-800 transition-colors duration-200 shadow-sm"
             >
-              Book Appointment
+              Booking Sekarang
             </Link>
           </div>
 
@@ -120,7 +120,7 @@ export function Navbar() {
               onClick={closeMobileMenu}
               className="block w-full text-center px-4 py-3 border border-transparent text-base font-medium rounded-full text-white bg-purple-700 hover:bg-purple-800 transition-colors duration-200 shadow-sm"
             >
-              Book Appointment
+              Booking Sekarang
             </Link>
           </div>
         </div>

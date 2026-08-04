@@ -7,10 +7,10 @@ export function GalleryHero() {
       
       <div className="relative z-10 max-w-3xl mx-auto pt-10">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-          Our Gallery
+          Galeri Kami
         </h1>
         <p className="text-lg md:text-xl text-purple-100 max-w-2xl mx-auto leading-relaxed">
-          Explore our beauty transformations and memorable moments. Discover the art of elegance crafted by our professionals.
+          Jelajahi transformasi kecantikan dan momen berkesan kami. Temukan seni keanggunan yang diracik oleh para ahli kami.
         </p>
       </div>
     </section>

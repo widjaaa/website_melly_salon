@@ -63,7 +63,7 @@ export function ServiceCard({ service }: Props) {
       <CardFooter className="px-8 pb-8 pt-0 border-none bg-transparent">
         <Link to={`/services/${service.id}`} className="w-full" tabIndex={-1}>
           <Button variant="outline" className="w-full hover:bg-purple-700 hover:text-white transition-colors border-2 shadow-sm font-semibold">
-            View Details
+            Lihat Detail
           </Button>
         </Link>
       </CardFooter>

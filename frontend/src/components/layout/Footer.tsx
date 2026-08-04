@@ -14,13 +14,13 @@ export function Footer() {
               Melly Salon
             </Link>
             <p className="text-sm text-gray-500 mt-1 font-medium tracking-wide">
-              Beauty & Wedding Specialist
+              Spesialis Kecantikan & Pernikahan
             </p>
           </div>
           
           {/* Copyright Section */}
           <div className="text-sm text-gray-400 text-center md:text-right">
-            <p>&copy; {currentYear} Melly Salon. All rights reserved.</p>
+            <p>&copy; {currentYear} Melly Salon. Hak cipta dilindungi.</p>
           </div>
           
         </div>

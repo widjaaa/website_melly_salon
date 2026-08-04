@@ -7,7 +7,7 @@ export function OurStory() {
   return (
     <section className="py-12 lg:py-12 bg-white">
       <Container>
-        <SectionTitle title="Our Story" subtitle="A journey of passion and dedication to beauty." />
+        <SectionTitle title="Cerita Kami" subtitle="Sebuah perjalanan yang penuh dengan gairah dan dedikasi pada kecantikan." />
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-center mt-8">
           {/* Image */}
@@ -22,19 +22,19 @@ export function OurStory() {
           
           {/* Content */}
           <div className="flex flex-col items-start">
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">Where elegance meets expertise.</h3>
+            <h3 className="text-3xl font-bold text-gray-900 mb-6">Di mana keanggunan bertemu dengan keahlian.</h3>
             <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
               <p>
-                Founded with a deep passion for beauty and wellness, Melly Beauty Salon began as a small boutique dedicated to making every client feel extraordinary. Over the years, we have grown into a full-service sanctuary known for our premium treatments and personalized care.
+                Didirikan dengan semangat kecantikan dan kesehatan, Melly Beauty Salon berawal dari butik kecil yang berdedikasi membuat setiap klien merasa istimewa. Selama bertahun-tahun, kami telah berkembang menjadi tempat perawatan lengkap yang dikenal dengan perawatan premium dan pelayanan personal kami.
               </p>
               <p>
-                Our journey is driven by the smiles of our clients. From everyday styling to life's most important milestones, our expert team has proudly served our community by enhancing natural beauty and inspiring confidence. We believe that true beauty comes from within, and our mission is to bring it to the surface.
+                Perjalanan kami didorong oleh senyum klien-klien kami. Dari penataan rambut sehari-hari hingga momen terpenting dalam hidup, tim ahli kami bangga dapat melayani komunitas dengan memancarkan kecantikan alami dan menginspirasi kepercayaan diri. Kami percaya kecantikan sejati berasal dari dalam, dan misi kami adalah menampilkannya ke permukaan.
               </p>
             </div>
             <div className="mt-10">
               <Link to="/services" tabIndex={-1}>
                 <Button size="lg" className="px-6 shadow-md">
-                  Discover Our Services
+                  Temukan Perawatan Kami
                 </Button>
               </Link>
             </div>

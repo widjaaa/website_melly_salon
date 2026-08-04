@@ -16,10 +16,10 @@ export function AboutHero() {
       <Container>
         <div className="relative z-10 text-center max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight drop-shadow-md">
-            About Melly Beauty Salon
+            Tentang Melly Beauty Salon
           </h1>
           <p className="text-xl md:text-2xl text-purple-100 font-medium tracking-wide drop-shadow">
-            Beauty, Confidence, and Elegance
+            Kecantikan, Kepercayaan Diri, dan Keanggunan
           </p>
         </div>
       </Container>

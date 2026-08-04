@@ -9,12 +9,12 @@ import api from '../../services/api';
 export default function ServicesPage() {
   // State for data
   const [services, setServices] = useState<ServiceType[]>([]);
-  const [categories, setCategories] = useState<string[]>(['All']);
+  const [categories, setCategories] = useState<string[]>(['Semua']);
   const [loading, setLoading] = useState(true);
 
   // State for filtering
   const [searchQuery, setSearchQuery] = useState('');
-  const [activeCategory, setActiveCategory] = useState('All');
+  const [activeCategory, setActiveCategory] = useState('Semua');
 
   // Fetch data from API
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function ServicesPage() {
         const data = response.data.data; // Array of categories with nested services
         
         let fetchedServices: ServiceType[] = [];
-        let fetchedCategories = ['All'];
+        let fetchedCategories = ['Semua'];
 
         data.forEach((category: any) => {
           fetchedCategories.push(category.name);
@@ -60,7 +60,7 @@ export default function ServicesPage() {
     return services.filter(service => {
       const matchesSearch = service.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
                             service.description.toLowerCase().includes(searchQuery.toLowerCase());
-      const matchesCategory = activeCategory === 'All' || service.category === activeCategory;
+      const matchesCategory = activeCategory === 'Semua' || service.category === activeCategory;
       return matchesSearch && matchesCategory;
     });
   }, [services, searchQuery, activeCategory]);

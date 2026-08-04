@@ -27,8 +27,8 @@ export function TestimonialGrid() {
     <section className="py-12 bg-gray-50/50">
       <Container>
         <SectionTitle 
-          title="More Love From Our Clients" 
-          subtitle="Read genuine reviews from people who have experienced our signature services."
+          title="Lebih Banyak Ulasan Dari Klien Kami" 
+          subtitle="Baca ulasan asli dari mereka yang telah merasakan layanan unggulan kami."
         />
         
         {loading ? (
@@ -37,7 +37,7 @@ export function TestimonialGrid() {
           </div>
         ) : testimonials.length === 0 ? (
           <div className="text-center py-12 text-gray-500">
-            No testimonials found.
+            Tidak ada testimoni.
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">

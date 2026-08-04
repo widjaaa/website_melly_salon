@@ -5,10 +5,10 @@ export function TestimonialsHero() {
       
       <div className="relative z-10 max-w-3xl mx-auto pt-10">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-          Testimonials
+          Testimoni
         </h1>
         <p className="text-lg md:text-xl text-purple-100 max-w-2xl mx-auto leading-relaxed">
-          What our customers say about their experience at Melly Beauty Salon.
+          Apa yang pelanggan kami katakan tentang pengalaman mereka di Melly Beauty Salon.
         </p>
       </div>
     </section>

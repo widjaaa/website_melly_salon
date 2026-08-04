@@ -25,12 +25,12 @@ export function CallToAction() {
             
             {/* Main Heading */}
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight leading-tight">
-              Ready to Experience Professional Beauty Care?
+              Siap Merasakan Perawatan Kecantikan Profesional?
             </h2>
             
             {/* Supporting text */}
             <p className="text-purple-100 text-lg md:text-xl mb-8 leading-relaxed max-w-2xl">
-              Book your appointment today and let our expert stylists and beauty therapists bring out your true, radiant beauty. Spaces fill up quickly!
+              Booking jadwal Anda hari ini dan biarkan penata gaya dan terapis kecantikan ahli kami memancarkan kecantikan Anda yang sesungguhnya. Slot terbatas!
             </p>
             
             {/* Action Buttons */}
@@ -42,7 +42,7 @@ export function CallToAction() {
                   size="lg" 
                   className="w-full bg-white !text-purple-700 hover:bg-gray-50 shadow-xl shadow-purple-900/20 px-6 py-4 text-lg border-transparent"
                 >
-                  Book Appointment
+                  Booking Sekarang
                 </Button>
               </Link>
               
@@ -53,7 +53,7 @@ export function CallToAction() {
                   size="lg" 
                   className="w-full bg-transparent border-2 !border-white/40 !text-white hover:!bg-white/10 hover:!border-white px-6 py-4 text-lg transition-colors"
                 >
-                  Contact Us
+                  Hubungi Kami
                 </Button>
               </Link>
               

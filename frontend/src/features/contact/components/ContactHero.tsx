@@ -7,10 +7,10 @@ export function ContactHero() {
       
       <div className="relative z-10 max-w-3xl mx-auto pt-10">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-          Get In Touch
+          Hubungi Kami
         </h1>
         <p className="text-lg md:text-xl text-purple-100 max-w-2xl mx-auto leading-relaxed">
-          Have a question or want to book an appointment? We're always here to help you achieve your beauty goals.
+          Ada pertanyaan atau ingin menjadwalkan janji temu? Kami selalu di sini untuk membantu Anda mencapai tujuan kecantikan Anda.
         </p>
       </div>
     </section>

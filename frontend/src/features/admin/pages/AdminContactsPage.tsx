@@ -26,52 +26,52 @@ export default function AdminContactsPage() {
       await api.put(`/admin/contacts/${id}/read`);
       fetchContacts();
     } catch (error) {
-      Swal.fire('Error', 'Failed to mark as read', 'error');
+      Swal.fire('Error', 'Gagal menandai telah dibaca', 'error');
     }
   };
 
   const handleDelete = async (id: number) => {
     const result = await Swal.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
+      title: 'Apakah Anda yakin?',
+      text: "Anda tidak akan dapat mengembalikan ini!",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#d33',
       cancelButtonColor: '#3085d6',
-      confirmButtonText: 'Yes, delete it!'
+      confirmButtonText: 'Ya, hapus!'
     });
 
     if (result.isConfirmed) {
       try {
         await api.delete(`/admin/contacts/${id}`);
-        Swal.fire('Deleted!', 'Message has been deleted.', 'success');
+        Swal.fire('Dihapus!', 'Pesan telah dihapus.', 'success');
         fetchContacts();
       } catch (error) {
-        Swal.fire('Error', 'Failed to delete message', 'error');
+        Swal.fire('Error', 'Gagal menghapus pesan', 'error');
       }
     }
   };
 
-  if (loading) return <div>Loading messages...</div>;
+  if (loading) return <div>Memuat pesan...</div>;
 
   return (
     <div className="space-y-6">
-      <h2 className="text-2xl font-bold text-gray-900">Contact Messages</h2>
+      <h2 className="text-2xl font-bold text-gray-900">Pesan Kontak</h2>
 
       <div className="bg-white shadow-sm rounded-none overflow-hidden border border-gray-200">
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Sender</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Message</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
-              <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Pengirim</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Pesan</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tanggal</th>
+              <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
             {contacts.length === 0 ? (
               <tr>
-                <td colSpan={4} className="px-6 py-10 text-center text-gray-500">No messages found.</td>
+                <td colSpan={4} className="px-6 py-10 text-center text-gray-500">Tidak ada pesan ditemukan.</td>
               </tr>
             ) : (
               contacts.map((contact) => (
@@ -89,9 +89,9 @@ export default function AdminContactsPage() {
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                     {!contact.is_read && (
-                      <button onClick={() => handleMarkAsRead(contact.id)} className="text-purple-600 hover:text-purple-900 mr-4">Mark Read</button>
+                      <button onClick={() => handleMarkAsRead(contact.id)} className="text-purple-600 hover:text-purple-900 mr-4">Tandai Dibaca</button>
                     )}
-                    <button onClick={() => handleDelete(contact.id)} className="text-red-600 hover:text-red-900">Delete</button>
+                    <button onClick={() => handleDelete(contact.id)} className="text-red-600 hover:text-red-900">Hapus</button>
                   </td>
                 </tr>
               ))

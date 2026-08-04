@@ -12,8 +12,8 @@ export function SocialMediaSection() {
     <section className="py-12 bg-gray-50/50">
       <Container>
         <div className="text-center max-w-2xl mx-auto mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">Connect With Us</h2>
-          <p className="text-lg text-gray-500 leading-relaxed">Follow our social media for daily beauty inspiration, special offers, and behind-the-scenes magic.</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">Terhubung Dengan Kami</h2>
+          <p className="text-lg text-gray-500 leading-relaxed">Ikuti media sosial kami untuk inspirasi kecantikan harian, penawaran khusus, dan keajaiban di balik layar.</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6">

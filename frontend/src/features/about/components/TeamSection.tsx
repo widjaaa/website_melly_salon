@@ -5,17 +5,17 @@ import { Card, CardContent } from '../../../components/ui/Card';
 const TEAM = [
   {
     name: 'Melly Wijaya',
-    position: 'Founder & Head Stylist',
+    position: 'Pendiri & Penata Gaya Utama',
     image: 'https://images.unsplash.com/photo-1595959183082-7b570b7e08e2?auto=format&fit=crop&q=80&w=600',
   },
   {
     name: 'Amanda Lin',
-    position: 'Senior Makeup Artist',
+    position: 'Penata Rias Senior',
     image: 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&q=80&w=600',
   },
   {
     name: 'Sarah Rahman',
-    position: 'Spa Therapist',
+    position: 'Terapis Spa',
     image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600',
   },
 ];
@@ -24,7 +24,7 @@ export function TeamSection() {
   return (
     <section className="py-12 lg:py-12 bg-gray-50/50">
       <Container>
-        <SectionTitle title="Meet Our Experts" subtitle="The talented professionals behind your radiant look." />
+        <SectionTitle title="Temui Ahli Kami" subtitle="Para profesional berbakat di balik penampilan memukau Anda." />
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
           {TEAM.map((member, idx) => (

@@ -21,27 +21,27 @@ export default function AdminLayout() {
       {/* Sidebar */}
       <aside className="w-64 bg-white border-r border-gray-200 flex flex-col">
         <div className="h-16 flex items-center justify-center border-b border-gray-200 px-6">
-          <span className="text-xl font-bold tracking-tight text-purple-900">Melly Admin</span>
+          <span className="text-xl font-bold tracking-tight text-purple-900">Admin Melly</span>
         </div>
         
         <nav className="flex-1 overflow-y-auto py-4 px-3 space-y-1">
           <Link to="/admin/dashboard" className="block px-3 py-2 rounded-none text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-purple-700">
-            Dashboard
+            Dasbor
           </Link>
           <Link to="/admin/bookings" className="block px-3 py-2 rounded-none text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-purple-700">
-            Bookings
+            Booking
           </Link>
           <Link to="/admin/services" className="block px-3 py-2 rounded-none text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-purple-700">
-            Services
+            Perawatan
           </Link>
           <Link to="/admin/galleries" className="block px-3 py-2 rounded-none text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-purple-700">
-            Gallery
+            Galeri
           </Link>
           <Link to="/admin/testimonials" className="block px-3 py-2 rounded-none text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-purple-700">
-            Testimonials
+            Testimoni
           </Link>
           <Link to="/admin/contacts" className="block px-3 py-2 rounded-none text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-purple-700">
-            Contact Messages
+            Pesan Kontak
           </Link>
         </nav>
         
@@ -50,7 +50,7 @@ export default function AdminLayout() {
             onClick={logout}
             className="w-full text-left px-3 py-2 rounded-none text-sm font-medium text-red-600 hover:bg-red-50 transition-colors"
           >
-            Logout
+            Keluar
           </button>
         </div>
       </aside>
@@ -58,7 +58,7 @@ export default function AdminLayout() {
       {/* Main Content */}
       <main className="flex-1 overflow-y-auto">
         <header className="h-16 bg-white border-b border-gray-200 flex items-center px-8 shadow-sm">
-          <h1 className="text-xl font-semibold text-gray-800">Admin Dashboard</h1>
+          <h1 className="text-xl font-semibold text-gray-800">Dasbor Admin</h1>
         </header>
         <div className="p-8">
           <Outlet />

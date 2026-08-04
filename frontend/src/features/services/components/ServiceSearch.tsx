@@ -18,7 +18,7 @@ export function ServiceSearch({ value, onChange }: Props) {
       {/* Input Field */}
       <Input 
         type="text" 
-        placeholder="Search for treatments..." 
+        placeholder="Cari perawatan..." 
         value={value} 
         onChange={(e) => onChange(e.target.value)}
         className="pl-12 w-full rounded-full border-gray-200 focus:border-purple-500 focus:ring-purple-500 bg-gray-50/50 shadow-inner"

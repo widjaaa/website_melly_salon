@@ -7,10 +7,10 @@ import { GalleryModal } from './components/GalleryModal';
 import { type GalleryCategory } from './data/galleryData';
 import api from '../../services/api';
 
-const CATEGORIES: GalleryCategory[] = ['All', 'Makeup', 'Hair', 'Wedding', 'Facial'];
+const CATEGORIES: GalleryCategory[] = ['Semua', 'Makeup', 'Hair', 'Wedding', 'Facial'];
 
 export default function GalleryPage() {
-  const [activeCategory, setActiveCategory] = useState<GalleryCategory>('All');
+  const [activeCategory, setActiveCategory] = useState<GalleryCategory>('Semua');
   const [modalOpen, setModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [galleryItems, setGalleryItems] = useState<any[]>([]);
@@ -39,7 +39,7 @@ export default function GalleryPage() {
 
   // Filter images based on selected category
   const filteredItems = useMemo(() => {
-    if (activeCategory === 'All') return galleryItems;
+    if (activeCategory === 'Semua') return galleryItems;
     return galleryItems.filter(item => item.category === activeCategory);
   }, [activeCategory, galleryItems]);
 
@@ -80,7 +80,7 @@ export default function GalleryPage() {
           </div>
         ) : filteredItems.length === 0 ? (
           <div className="text-center py-12 text-gray-500">
-            No gallery items found for this category.
+            Tidak ada foto galeri untuk kategori ini.
           </div>
         ) : (
           <GalleryGrid 

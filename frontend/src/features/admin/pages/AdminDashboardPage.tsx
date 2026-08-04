@@ -41,21 +41,21 @@ export default function AdminDashboardPage() {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-2xl font-bold text-gray-900">Overview</h2>
+      <h2 className="text-2xl font-bold text-gray-900">Ringkasan</h2>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-white p-6 rounded-none shadow-sm border border-gray-100 flex flex-col">
-          <span className="text-gray-500 text-sm font-medium">Total Bookings</span>
+          <span className="text-gray-500 text-sm font-medium">Total Booking</span>
           <span className="text-4xl font-bold text-purple-700 mt-2">{stats.bookings}</span>
         </div>
         
         <div className="bg-white p-6 rounded-none shadow-sm border border-gray-100 flex flex-col">
-          <span className="text-gray-500 text-sm font-medium">Active Services</span>
+          <span className="text-gray-500 text-sm font-medium">Perawatan Aktif</span>
           <span className="text-4xl font-bold text-purple-700 mt-2">{stats.services}</span>
         </div>
         
         <div className="bg-white p-6 rounded-none shadow-sm border border-gray-100 flex flex-col">
-          <span className="text-gray-500 text-sm font-medium">Unread Messages</span>
+          <span className="text-gray-500 text-sm font-medium">Pesan Belum Dibaca</span>
           <span className="text-4xl font-bold text-purple-700 mt-2">{stats.messages}</span>
         </div>
       </div>

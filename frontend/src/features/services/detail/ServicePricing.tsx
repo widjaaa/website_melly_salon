@@ -11,25 +11,25 @@ export function ServicePricing() {
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-400 rounded-full blur-[100px] opacity-20 transform -translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
           
           <h2 className="text-3xl md:text-5xl font-bold mb-8 relative z-10 tracking-tight">
-            Investment in Beauty
+            Investasi Kecantikan
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-6 relative z-10">
             {/* Duration Box */}
             <div className="bg-white/10 backdrop-blur-md rounded-none p-6 border border-white/20 shadow-xl">
-              <p className="text-purple-200 text-lg md:text-xl font-medium mb-3">Estimated Duration</p>
-              <p className="text-5xl font-bold">60 Mins</p>
+              <p className="text-purple-200 text-lg md:text-xl font-medium mb-3">Estimasi Durasi</p>
+              <p className="text-5xl font-bold">60 Menit</p>
             </div>
             
             {/* Pricing Box */}
             <div className="bg-white/10 backdrop-blur-md rounded-none p-6 border border-white/20 shadow-xl">
-              <p className="text-purple-200 text-lg md:text-xl font-medium mb-3">Starting Price</p>
-              <p className="text-5xl font-bold">$80.00</p>
+              <p className="text-purple-200 text-lg md:text-xl font-medium mb-3">Harga Mulai Dari</p>
+              <p className="text-5xl font-bold">Rp 80.000</p>
             </div>
           </div>
           
           <p className="mt-8 text-purple-200 text-sm md:text-base italic relative z-10 max-w-2xl mx-auto">
-            * Note: Prices and durations may vary depending on hair length, condition, and specific requests. A final quote will be provided during your personalized consultation before any service begins.
+            * Catatan: Harga dan durasi mungkin bervariasi tergantung pada panjang rambut, kondisi, dan permintaan khusus. Penawaran akhir akan diberikan selama konsultasi personal Anda sebelum perawatan dimulai.
           </p>
         </div>
       </Container>

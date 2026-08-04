@@ -2,17 +2,17 @@ import Container from '../../../components/ui/Container';
 import SectionTitle from '../../../components/ui/SectionTitle';
 
 const BENEFITS = [
-  'Professional Beauticians',
-  'Premium Products',
-  'Personalized Consultation',
-  'Comfortable Environment'
+  'Ahli Kecantikan Profesional',
+  'Produk Premium',
+  'Konsultasi Personal',
+  'Lingkungan Nyaman'
 ];
 
 export function ServiceBenefits() {
   return (
     <section className="py-12 lg:py-12 bg-gray-50/50 border-y border-gray-100">
       <Container>
-        <SectionTitle title="What to Expect" subtitle="The benefits of experiencing our premium services." />
+        <SectionTitle title="Yang Akan Anda Dapatkan" subtitle="Manfaat dari mencoba perawatan premium kami." />
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6 mt-8">
           {BENEFITS.map((benefit, idx) => (
