@@ -1,6 +1,6 @@
 export function ServicesHero() {
   return (
-    <section className="bg-purple-900 pt-32 pb-24 text-center px-4 relative overflow-hidden">
+    <section className="bg-purple-900 pt-15 pb-24 text-center px-4 relative overflow-hidden">
       {/* Background with overlay */}
       <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&q=80&w=1920')] bg-cover bg-center mix-blend-luminosity"></div>
       

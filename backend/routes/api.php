@@ -46,8 +46,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete('/testimonials/{testimonial}', [TestimonialController::class, 'destroy']);
 });
 
-// Public Routes
 Route::get('/services', [PublicServiceController::class, 'index']);
+Route::get('/services/{service:slug}', [PublicServiceController::class, 'show']);
 Route::post('/bookings', [BookingController::class, 'store']);
 Route::post('/contacts', [ContactController::class, 'store']);
 Route::get('/galleries', [GalleryController::class, 'index']);

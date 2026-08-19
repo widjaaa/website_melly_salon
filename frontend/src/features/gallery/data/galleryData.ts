@@ -1,4 +1,4 @@
-export type GalleryCategory = 'All' | 'Makeup' | 'Hair' | 'Wedding' | 'Facial';
+export type GalleryCategory = 'Semua' | 'Makeup' | 'Hair' | 'Wedding' | 'Facial' | 'Nails' | 'Spa' | 'Others';
 
 export interface GalleryItem {
   id: string;

@@ -1,6 +1,6 @@
 import Container from '../../../components/ui/Container';
 
-export function ServicePricing() {
+export function ServicePricing({ service }: { service: any }) {
   return (
     <section className="py-12 lg:py-12 bg-white">
       <Container>
@@ -18,13 +18,13 @@ export function ServicePricing() {
             {/* Duration Box */}
             <div className="bg-white/10 backdrop-blur-md rounded-none p-6 border border-white/20 shadow-xl">
               <p className="text-purple-200 text-lg md:text-xl font-medium mb-3">Estimasi Durasi</p>
-              <p className="text-5xl font-bold">60 Menit</p>
+              <p className="text-5xl font-bold">{service.duration} Menit</p>
             </div>
             
             {/* Pricing Box */}
             <div className="bg-white/10 backdrop-blur-md rounded-none p-6 border border-white/20 shadow-xl">
               <p className="text-purple-200 text-lg md:text-xl font-medium mb-3">Harga Mulai Dari</p>
-              <p className="text-5xl font-bold">Rp 80.000</p>
+              <p className="text-5xl font-bold">Rp {Number(service.price).toLocaleString('id-ID')}</p>
             </div>
           </div>
           

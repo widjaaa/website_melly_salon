@@ -20,7 +20,6 @@ class BookingController extends Controller
         $validator = Validator::make($request->all(), [
             'full_name'        => 'required|string|min:3|max:255',
             'phone_number'     => 'required|string|min:9|max:20',
-            'email'            => 'required|email|max:255',
             'service'          => 'required|string|max:255',
             'preferred_date'   => 'required|date|after_or_equal:today',
             'preferred_time'   => 'required|string|max:20',
@@ -44,7 +43,6 @@ class BookingController extends Controller
         $booking = Booking::create([
             'full_name'        => $request->full_name,
             'phone_number'     => $request->phone_number,
-            'email'            => $request->email,
             'service_name'     => $request->service,
             'service_id'       => $service?->id, // nullable if not found
             'preferred_date'   => $request->preferred_date,

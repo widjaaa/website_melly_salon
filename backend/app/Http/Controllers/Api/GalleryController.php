@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Gallery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class GalleryController extends Controller
 {
@@ -29,7 +30,7 @@ class GalleryController extends Controller
         $validator = Validator::make($request->all(), [
             'title' => 'nullable|string|max:255',
             'description' => 'nullable|string',
-            'image_url' => 'required|url',
+            'image_url' => 'nullable|file|image|max:2048',
             'category' => 'nullable|string|max:255',
         ]);
 
@@ -40,7 +41,14 @@ class GalleryController extends Controller
             ], 422);
         }
 
-        $gallery = Gallery::create($request->all());
+        $validated = $request->all();
+
+        if ($request->hasFile('image_url')) {
+            $path = $request->file('image_url')->store('galleries', 'public');
+            $validated['image_url'] = url(Storage::url($path));
+        }
+
+        $gallery = Gallery::create($validated);
 
         return response()->json([
             'status' => 'success',
@@ -57,7 +65,7 @@ class GalleryController extends Controller
         $validator = Validator::make($request->all(), [
             'title' => 'nullable|string|max:255',
             'description' => 'nullable|string',
-            'image_url' => 'required|url',
+            'image_url' => 'nullable|file|image|max:2048',
             'category' => 'nullable|string|max:255',
         ]);
 
@@ -68,7 +76,27 @@ class GalleryController extends Controller
             ], 422);
         }
 
-        $gallery->update($request->all());
+        $validated = $request->all();
+
+        if ($request->hasFile('image_url')) {
+            // Hapus gambar lama jika ada
+            if ($gallery->image_url && str_contains($gallery->image_url, '/storage/')) {
+                $oldPath = str_replace(url('/storage') . '/', '', $gallery->image_url);
+                if (Storage::disk('public')->exists($oldPath)) {
+                    Storage::disk('public')->delete($oldPath);
+                }
+            }
+            
+            $path = $request->file('image_url')->store('galleries', 'public');
+            $validated['image_url'] = url(Storage::url($path));
+        } else {
+            // Jika tidak ada gambar baru, hindari nulling field
+            if (array_key_exists('image_url', $validated) && $validated['image_url'] === null) {
+                unset($validated['image_url']);
+            }
+        }
+
+        $gallery->update($validated);
 
         return response()->json([
             'status' => 'success',
@@ -82,6 +110,14 @@ class GalleryController extends Controller
      */
     public function destroy(Gallery $gallery)
     {
+        // Hapus file gambar terkait
+        if ($gallery->image_url && str_contains($gallery->image_url, '/storage/')) {
+            $oldPath = str_replace(url('/storage') . '/', '', $gallery->image_url);
+            if (Storage::disk('public')->exists($oldPath)) {
+                Storage::disk('public')->delete($oldPath);
+            }
+        }
+
         $gallery->delete();
 
         return response()->json([

@@ -7,7 +7,7 @@ import { GalleryModal } from './components/GalleryModal';
 import { type GalleryCategory } from './data/galleryData';
 import api from '../../services/api';
 
-const CATEGORIES: GalleryCategory[] = ['Semua', 'Makeup', 'Hair', 'Wedding', 'Facial'];
+const CATEGORIES: GalleryCategory[] = ['Semua', 'Makeup', 'Hair', 'Wedding', 'Facial', 'Nails', 'Spa', 'Others'];
 
 export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState<GalleryCategory>('Semua');
@@ -20,15 +20,20 @@ export default function GalleryPage() {
     const fetchGalleries = async () => {
       try {
         const response = await api.get('/galleries');
-        const data = response.data.data.map((item: any) => ({
-          id: item.id,
-          image: item.image_url,
-          category: item.category || 'Hair',
-          title: item.title || '',
-        }));
-        setGalleryItems(data);
+        if (response.data.data && response.data.data.length > 0) {
+          const data = response.data.data.map((item: any) => ({
+            id: item.id.toString(),
+            image: item.image_url,
+            category: item.category || 'Hair',
+            title: item.title || '',
+          }));
+          setGalleryItems(data);
+        } else {
+          setGalleryItems([]);
+        }
       } catch (error) {
         console.error('Failed to fetch galleries:', error);
+        setGalleryItems([]);
       } finally {
         setLoading(false);
       }

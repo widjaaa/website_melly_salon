@@ -4,58 +4,35 @@ import SectionTitle from '../../../components/ui/SectionTitle';
 import { Card, CardContent } from '../../../components/ui/Card';
 import api from '../../../services/api';
 
-// Sample testimonial data for the luxury salon
-const FALLBACK_TESTIMONIALS = [
-  {
-    id: 1,
-    name: 'Sarah Johnson',
-    role: 'Pengantin',
-    content: '"Tim Melly Salon membuat hari pernikahanku benar-benar sempurna. Riasanku tetap memukau sepanjang malam dan aku merasa seperti putri sungguhan."',
-    rating: 5,
-    initials: 'SJ'
-  },
-  {
-    id: 2,
-    name: 'Emily Davis',
-    role: 'Klien Tetap',
-    content: '"Aku selalu pulang dengan perasaan segar dan cantik. Perawatan spa premiumnya luar biasa. Sangat direkomendasikan!"',
-    rating: 5,
-    initials: 'ED'
-  },
-  {
-    id: 3,
-    name: 'Jessica Lee',
-    role: 'Peserta Acara',
-    content: '"Staf yang profesional, bersih, dan sangat berbakat. Mereka benar-benar mendengarkan apa yang Anda inginkan dan mewujudkannya dengan indah setiap saat."',
-    rating: 5,
-    initials: 'JL'
-  },
-];
-
 export function TestimonialsPreview() {
-  const [testimonials, setTestimonials] = useState<any[]>(FALLBACK_TESTIMONIALS);
+  const [testimonials, setTestimonials] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
         const response = await api.get('/testimonials');
-        if (response.data.data.length > 0) {
-          const apiTestimonials = response.data.data.map((item: any) => ({
-            id: item.id,
-            name: item.name,
-            role: item.role || 'Klien',
-            content: item.content,
-            rating: item.rating,
-            initials: item.name.substring(0, 2).toUpperCase()
-          }));
-          setTestimonials(apiTestimonials.slice(0, 3));
-        }
+        const apiTestimonials = response.data.data.map((item: any) => ({
+          id: item.id,
+          name: item.name,
+          role: item.role || 'Klien',
+          content: item.content,
+          rating: item.rating,
+          initials: item.name.substring(0, 2).toUpperCase()
+        }));
+        setTestimonials(apiTestimonials.slice(0, 3));
       } catch (error) {
         console.error('Failed to fetch testimonials for preview:', error);
+      } finally {
+        setLoading(false);
       }
     };
     fetchTestimonials();
   }, []);
+
+  if (!loading && testimonials.length === 0) {
+    return null; // Hide the section completely if there are no testimonials
+  }
 
   return (
     <section className="py-12 lg:py-12 bg-pink-50/50">

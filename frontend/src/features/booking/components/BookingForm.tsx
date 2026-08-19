@@ -13,6 +13,7 @@ import api from '../../../services/api';
 
 export function BookingForm() {
   const [isSuccess, setIsSuccess] = useState(false);
+  const [submittedData, setSubmittedData] = useState<BookingFormData | null>(null);
   const [selectedServiceName, setSelectedServiceName] = useState('');
 
   // Initialize React Hook Form with Zod validation
@@ -21,7 +22,6 @@ export function BookingForm() {
     defaultValues: {
       fullName: '',
       phoneNumber: '',
-      email: '',
       service: '',
       preferredDate: '',
       preferredTime: '',
@@ -52,7 +52,6 @@ export function BookingForm() {
       await api.post('/bookings', {
         full_name:        data.fullName,
         phone_number:     data.phoneNumber,
-        email:            data.email,
         service:          data.service,
         preferred_date:   data.preferredDate,
         preferred_time:   data.preferredTime,
@@ -60,6 +59,7 @@ export function BookingForm() {
       });
 
       Swal.close();
+      setSubmittedData(data);
       setIsSuccess(true);
       window.scrollTo({ top: 0, behavior: 'smooth' });
 
@@ -89,7 +89,7 @@ export function BookingForm() {
   };
 
   if (isSuccess) {
-    return <BookingSuccess />;
+    return <BookingSuccess data={submittedData} />;
   }
 
   return (

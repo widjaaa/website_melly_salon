@@ -69,15 +69,7 @@ export function BookingFields({ onServiceChange }: BookingFieldsProps) {
         />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <Input
-          label="Alamat Email *"
-          type="email"
-          placeholder="siti@example.com"
-          {...register('email')}
-          error={errors.email?.message}
-        />
-
+      <div className="grid grid-cols-1 gap-6">
         {/* Service Select — grouped by category, fetched from API */}
         <div className="w-full">
           <label className="block text-sm font-medium text-gray-700 mb-2">

@@ -19,9 +19,11 @@ export default function AdminServicesPage() {
     name: '',
     description: '',
     price: '',
-    duration_minutes: '60',
-    image_url: ''
+    duration: '60',
+    image: null as File | string | null,
+    is_featured: false
   });
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
 
   const fetchCategoriesAndServices = async () => {
     try {
@@ -40,8 +42,26 @@ export default function AdminServicesPage() {
   }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    const { name, value, type } = e.target;
+    if (type === 'checkbox') {
+      const checked = (e.target as HTMLInputElement).checked;
+      setFormData(prev => ({ ...prev, [name]: checked }));
+    } else if (type === 'file') {
+      const files = (e.target as HTMLInputElement).files;
+      if (files && files.length > 0) {
+        const file = files[0];
+        setFormData(prev => ({ ...prev, [name]: file }));
+        
+        // Generate preview
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          setImagePreview(reader.result as string);
+        };
+        reader.readAsDataURL(file);
+      }
+    } else {
+      setFormData(prev => ({ ...prev, [name]: value }));
+    }
   };
 
   const openAddModal = () => {
@@ -51,9 +71,11 @@ export default function AdminServicesPage() {
       name: '',
       description: '',
       price: '',
-      duration_minutes: '60',
-      image_url: ''
+      duration: '60',
+      image: null,
+      is_featured: false
     });
+    setImagePreview(null);
     setIsModalOpen(true);
   };
 
@@ -64,20 +86,39 @@ export default function AdminServicesPage() {
       name: service.name,
       description: service.description || '',
       price: service.price.toString(),
-      duration_minutes: service.duration_minutes.toString(),
-      image_url: service.image_url || ''
+      duration: service.duration ? service.duration.toString() : '60',
+      image: null,
+      is_featured: !!service.is_featured
     });
+    setImagePreview(service.image || null);
     setIsModalOpen(true);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
+      const submitData = new FormData();
+      submitData.append('category_id', formData.category_id);
+      submitData.append('name', formData.name);
+      submitData.append('description', formData.description);
+      submitData.append('price', formData.price);
+      submitData.append('duration', formData.duration);
+      submitData.append('is_featured', formData.is_featured ? '1' : '0');
+      
+      if (formData.image instanceof File) {
+        submitData.append('image', formData.image);
+      }
+
       if (editingId) {
-        await api.put(`/services/${editingId}`, formData);
+        submitData.append('_method', 'PUT');
+        await api.post(`/services/${editingId}`, submitData, {
+          headers: { 'Content-Type': 'multipart/form-data' }
+        });
         Swal.fire({ icon: 'success', title: 'Perawatan diperbarui', toast: true, position: 'top-end', showConfirmButton: false, timer: 3000 });
       } else {
-        await api.post('/services', formData);
+        await api.post('/services', submitData, {
+          headers: { 'Content-Type': 'multipart/form-data' }
+        });
         Swal.fire({ icon: 'success', title: 'Perawatan dibuat', toast: true, position: 'top-end', showConfirmButton: false, timer: 3000 });
       }
       setIsModalOpen(false);
@@ -140,13 +181,20 @@ export default function AdminServicesPage() {
                   <tr key={service.id}>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center">
-                        {service.image_url && (
+                        {service.image && (
                           <div className="flex-shrink-0 h-10 w-10 mr-3">
-                            <img className="h-10 w-10 object-cover" src={service.image_url} alt="" />
+                            <img className="h-10 w-10 object-cover" src={service.image} alt="" />
                           </div>
                         )}
                         <div>
-                          <div className="text-sm font-medium text-gray-900">{service.name}</div>
+                          <div className="text-sm font-medium text-gray-900 flex items-center gap-2">
+                            {service.name}
+                            {service.is_featured && (
+                              <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-yellow-100 text-yellow-800">
+                                Unggulan
+                              </span>
+                            )}
+                          </div>
                           <div className="text-xs text-gray-500 truncate max-w-xs">{service.description}</div>
                         </div>
                       </div>
@@ -160,7 +208,7 @@ export default function AdminServicesPage() {
                       Rp {service.price.toLocaleString('id-ID')}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {service.duration_minutes} menit
+                      {service.duration} menit
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-3">
                       <button onClick={() => openEditModal(service, category.id)} className="text-purple-600 hover:text-purple-900">Edit</button>
@@ -184,7 +232,7 @@ export default function AdminServicesPage() {
 
             <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
 
-            <div className="inline-block align-bottom bg-white text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+            <div className="inline-block align-bottom bg-white text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full relative z-10">
               <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                 <h3 className="text-lg leading-6 font-medium text-gray-900 mb-4">
                   {editingId ? 'Edit Perawatan' : 'Tambah Perawatan Baru'}
@@ -234,22 +282,49 @@ export default function AdminServicesPage() {
                     />
                     <Input 
                       label="Durasi (Menit)"
-                      name="duration_minutes"
+                      name="duration"
                       type="number"
-                      value={formData.duration_minutes}
+                      value={formData.duration}
                       onChange={handleInputChange}
                       required
                     />
                   </div>
 
-                  <Input 
-                    label="URL Gambar"
-                    name="image_url"
-                    type="url"
-                    value={formData.image_url}
-                    onChange={handleInputChange}
-                    placeholder="https://example.com/image.jpg"
-                  />
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Gambar Perawatan</label>
+                    <input 
+                      type="file" 
+                      name="image" 
+                      accept="image/*"
+                      onChange={handleInputChange}
+                      className="block w-full text-sm text-gray-500
+                        file:mr-4 file:py-2 file:px-4
+                        file:rounded-none file:border-0
+                        file:text-sm file:font-semibold
+                        file:bg-purple-50 file:text-purple-700
+                        hover:file:bg-purple-100"
+                    />
+                    {imagePreview && (
+                      <div className="mt-3">
+                        <p className="text-xs text-gray-500 mb-1">Pratinjau:</p>
+                        <img src={imagePreview} alt="Preview" className="h-32 object-cover border border-gray-200" />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="flex items-center mt-4">
+                    <input
+                      id="is_featured"
+                      name="is_featured"
+                      type="checkbox"
+                      checked={formData.is_featured}
+                      onChange={handleInputChange}
+                      className="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded"
+                    />
+                    <label htmlFor="is_featured" className="ml-2 block text-sm text-gray-900 font-medium">
+                      Jadikan Perawatan Unggulan (Tampil di Beranda)
+                    </label>
+                  </div>
 
                   <div className="mt-5 sm:mt-6 sm:flex sm:flex-row-reverse">
                     <Button type="submit" className="w-full sm:ml-3 sm:w-auto">

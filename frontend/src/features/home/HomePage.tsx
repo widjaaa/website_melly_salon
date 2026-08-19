@@ -4,6 +4,7 @@ import { FeaturedServices } from './components/FeaturedServices';
 import { GalleryPreview } from './components/GalleryPreview';
 import { TestimonialsPreview } from './components/TestimonialsPreview';
 import { CallToAction } from './components/CallToAction';
+import { WelcomeScreen } from './components/WelcomeScreen';
 
 /**
  * HomePage Feature Component
@@ -13,6 +14,7 @@ import { CallToAction } from './components/CallToAction';
 export default function HomePage() {
   return (
     <main className="flex flex-col w-full min-h-screen bg-white font-sans overflow-x-hidden">
+      <WelcomeScreen />
       <HeroSection />
       <AboutPreview />
       <FeaturedServices />

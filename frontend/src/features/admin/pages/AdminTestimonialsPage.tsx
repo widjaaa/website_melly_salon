@@ -76,17 +76,23 @@ export default function AdminTestimonialsPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
+      const dataToSend = {
+        ...formData,
+        rating: parseInt(formData.rating, 10)
+      };
+      
       if (editingId) {
-        await api.put(`/testimonials/${editingId}`, formData);
+        await api.put(`/testimonials/${editingId}`, dataToSend);
         Swal.fire({ icon: 'success', title: 'Testimoni diperbarui', toast: true, position: 'top-end', showConfirmButton: false, timer: 3000 });
       } else {
-        await api.post('/testimonials', formData);
+        await api.post('/testimonials', dataToSend);
         Swal.fire({ icon: 'success', title: 'Testimoni ditambahkan', toast: true, position: 'top-end', showConfirmButton: false, timer: 3000 });
       }
       setIsModalOpen(false);
       fetchTestimonials();
-    } catch (error) {
-      Swal.fire('Error', 'Gagal menyimpan testimoni', 'error');
+    } catch (error: any) {
+      console.error('Testimonial submit error:', error.response?.data || error);
+      Swal.fire('Error', error.response?.data?.message || 'Gagal menyimpan testimoni', 'error');
     }
   };
 
@@ -198,7 +204,7 @@ export default function AdminTestimonialsPage() {
 
             <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
 
-            <div className="inline-block align-bottom bg-white text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+            <div className="inline-block align-bottom bg-white text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full relative z-10">
               <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                 <h3 className="text-lg leading-6 font-medium text-gray-900 mb-4">
                   {editingId ? 'Edit Testimoni' : 'Tambah Testimoni'}

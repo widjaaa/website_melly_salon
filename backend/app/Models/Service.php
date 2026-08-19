@@ -12,7 +12,7 @@ class Service extends Model
 
     protected $fillable = [
         'category_id', 'name', 'slug', 'description', 
-        'price', 'duration', 'image', 'is_active'
+        'price', 'duration', 'image', 'is_active', 'is_featured'
     ];
 
     public function category(): BelongsTo

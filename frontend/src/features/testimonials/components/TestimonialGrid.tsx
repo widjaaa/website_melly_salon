@@ -43,10 +43,11 @@ export function TestimonialGrid() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
             {testimonials.map((testimonial) => (
               <TestimonialCard key={testimonial.id} testimonial={{
-                id: String(testimonial.id),
+                id: testimonial.id,
                 name: testimonial.name,
                 role: testimonial.role || 'Client',
-                content: testimonial.content,
+                review: testimonial.content || '',
+                service: 'Perawatan Salon',
                 rating: testimonial.rating,
                 avatar: `https://ui-avatars.com/api/?name=${encodeURIComponent(testimonial.name)}&background=random`
               }} />

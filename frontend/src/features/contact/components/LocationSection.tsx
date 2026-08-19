@@ -11,20 +11,18 @@ export function LocationSection() {
         
         <div className="mt-8 bg-gray-50 rounded-none p-4 lg:p-8 flex flex-col lg:flex-row gap-6 relative overflow-hidden border border-gray-100">
           
-          {/* Google Maps Placeholder */}
+          {/* Google Maps Iframe */}
           <div className="w-full lg:w-2/3 h-[400px] lg:h-auto rounded-none overflow-hidden relative shadow-inner bg-gray-200">
-            <img 
-              src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=1200" 
-              alt="Map Location Placeholder" 
-              className="w-full h-full object-cover opacity-60 mix-blend-multiply"
-            />
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="bg-white p-5 rounded-full shadow-2xl animate-bounce">
-                <svg className="w-10 h-10 text-pink-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                </svg>
-              </div>
-            </div>
+            <iframe
+              src="https://maps.google.com/maps?q=Salon%20sanggar%20weding%20melly%20group&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0, minHeight: '400px' }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Melly Beauty Salon Location"
+            ></iframe>
           </div>
 
           {/* Salon Address Card */}
@@ -43,14 +41,15 @@ export function LocationSection() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                     <p className="text-gray-600 text-lg leading-relaxed">
-                      Jl. Jenderal Sudirman No. 123<br />
-                      Gedung Mawar, Lantai 2<br />
-                      Jakarta Selatan, DKI Jakarta 12190
+                      Perumahan Bumi Cikarang Makmur<br />
+                      Blok E 11 No. 15, RT.004/RW.014<br />
+                      Sukadami, Cikarang Sel.,<br />
+                      Kabupaten Bekasi, Jawa Barat 17550
                     </p>
                   </div>
                 </div>
 
-                <a href="https://maps.google.com" target="_blank" rel="noreferrer" className="block w-full" tabIndex={-1}>
+                <a href="https://maps.app.goo.gl/9Bet6yCcHHzZFsSf6" target="_blank" rel="noreferrer" className="block w-full" tabIndex={-1}>
                   <Button variant="outline" size="lg" className="w-full border-purple-200 text-purple-700 hover:bg-purple-50 hover:border-purple-300 shadow-sm py-4 text-lg">
                     Buka di Google Maps
                   </Button>

@@ -17,11 +17,12 @@ export default function AdminGalleriesPage() {
   const [formData, setFormData] = useState({
     title: '',
     description: '',
-    image_url: '',
     category: 'Hair'
   });
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [imagePreview, setImagePreview] = useState<string>('');
 
-  const categories = ['Hair', 'Nails', 'Spa', 'Makeup', 'Others'];
+  const categories = ['Makeup', 'Hair', 'Wedding', 'Facial', 'Nails', 'Spa', 'Others'];
 
   const fetchGalleries = async () => {
     try {
@@ -49,9 +50,10 @@ export default function AdminGalleriesPage() {
     setFormData({
       title: '',
       description: '',
-      image_url: '',
       category: 'Hair'
     });
+    setImageFile(null);
+    setImagePreview('');
     setIsModalOpen(true);
   };
 
@@ -60,20 +62,43 @@ export default function AdminGalleriesPage() {
     setFormData({
       title: gallery.title,
       description: gallery.description || '',
-      image_url: gallery.image_url,
       category: gallery.category || 'Hair'
     });
+    setImageFile(null);
+    setImagePreview(gallery.image_url || '');
     setIsModalOpen(true);
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      const file = e.target.files[0];
+      setImageFile(file);
+      setImagePreview(URL.createObjectURL(file));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
+      const submitData = new FormData();
+      submitData.append('title', formData.title);
+      submitData.append('description', formData.description);
+      submitData.append('category', formData.category);
+      
+      if (imageFile) {
+        submitData.append('image_url', imageFile);
+      }
+
       if (editingId) {
-        await api.put(`/galleries/${editingId}`, formData);
+        submitData.append('_method', 'PUT'); // For Laravel PUT with FormData
+        await api.post(`/galleries/${editingId}`, submitData, {
+          headers: { 'Content-Type': 'multipart/form-data' }
+        });
         Swal.fire({ icon: 'success', title: 'Foto galeri diperbarui', toast: true, position: 'top-end', showConfirmButton: false, timer: 3000 });
       } else {
-        await api.post('/galleries', formData);
+        await api.post('/galleries', submitData, {
+          headers: { 'Content-Type': 'multipart/form-data' }
+        });
         Swal.fire({ icon: 'success', title: 'Foto galeri ditambahkan', toast: true, position: 'top-end', showConfirmButton: false, timer: 3000 });
       }
       setIsModalOpen(false);
@@ -189,20 +214,23 @@ export default function AdminGalleriesPage() {
                     rows={2}
                   />
 
-                  <Input 
-                    label="URL Gambar"
-                    name="image_url"
-                    type="url"
-                    value={formData.image_url}
-                    onChange={handleInputChange}
-                    placeholder="https://example.com/image.jpg"
-                    required
-                  />
+                  <div className="mb-4">
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Gambar Galeri
+                    </label>
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleFileChange}
+                      className="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100"
+                      required={!editingId && !imagePreview}
+                    />
+                  </div>
 
-                  {formData.image_url && (
+                  {imagePreview && (
                      <div className="mt-2">
                        <p className="text-xs text-gray-500 mb-1">Pratinjau Gambar:</p>
-                       <img src={formData.image_url} alt="Preview" className="h-32 w-full object-cover rounded-none border border-gray-200" onError={(e) => (e.currentTarget.style.display = 'none')} onLoad={(e) => (e.currentTarget.style.display = 'block')} />
+                       <img src={imagePreview} alt="Preview" className="h-32 w-full object-cover rounded-none border border-gray-200" onError={(e) => (e.currentTarget.style.display = 'none')} onLoad={(e) => (e.currentTarget.style.display = 'block')} />
                      </div>
                   )}
 
