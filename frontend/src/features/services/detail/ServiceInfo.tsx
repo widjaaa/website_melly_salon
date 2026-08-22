@@ -22,11 +22,11 @@ export function ServiceInfo({ service }: { service: any }) {
               {service.category?.name || "Perawatan Unggulan"}
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight tracking-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight tracking-tight">
               {service.name}
             </h1>
             
-            <div className="text-gray-600 text-lg space-y-6 leading-relaxed whitespace-pre-wrap">
+            <div className="text-gray-600 text-base md:text-lg space-y-6 leading-relaxed whitespace-pre-wrap">
               {service.description}
             </div>
           </div>

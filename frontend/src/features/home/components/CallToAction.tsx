@@ -24,12 +24,12 @@ export function CallToAction() {
           <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
             
             {/* Main Heading */}
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight leading-tight">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 tracking-tight leading-tight">
               Siap Merasakan Perawatan Kecantikan Profesional?
             </h2>
             
             {/* Supporting text */}
-            <p className="text-purple-100 text-lg md:text-xl mb-8 leading-relaxed max-w-2xl">
+            <p className="text-purple-100 text-base md:text-lg mb-8 leading-relaxed max-w-2xl">
               Booking jadwal Anda hari ini dan biarkan penata gaya dan terapis kecantikan ahli kami memancarkan kecantikan Anda yang sesungguhnya. Slot terbatas!
             </p>
             

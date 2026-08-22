@@ -25,8 +25,8 @@ export function BookingSuccess({ data }: BookingSuccessProps) {
         </svg>
       </div>
       
-      <h2 className="text-4xl font-bold text-gray-900 mb-4 tracking-tight">Terima Kasih!</h2>
-      <p className="text-lg text-gray-600 mb-8 max-w-md mx-auto leading-relaxed">
+      <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 tracking-tight">Terima Kasih!</h2>
+      <p className="text-base text-gray-600 mb-8 max-w-md mx-auto leading-relaxed">
         Permintaan booking Anda telah berhasil tersimpan. 
         <br/><br/>
         <strong>Satu langkah lagi!</strong> Silakan klik tombol di bawah ini untuk mengirimkan detail booking Anda langsung ke WhatsApp kami agar bisa segera dikonfirmasi.
