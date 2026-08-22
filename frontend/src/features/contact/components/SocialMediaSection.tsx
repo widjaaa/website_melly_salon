@@ -27,8 +27,8 @@ export function SocialMediaSection() {
     <section className="py-12 bg-gray-50/50">
       <Container>
         <div className="text-center max-w-2xl mx-auto mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">Terhubung Dengan Kami</h2>
-          <p className="text-lg text-gray-500 leading-relaxed">Ikuti media sosial kami untuk inspirasi kecantikan harian, penawaran khusus, dan keajaiban di balik layar.</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 tracking-tight">Terhubung Dengan Kami</h2>
+          <p className="text-base md:text-lg text-gray-500 leading-relaxed">Ikuti media sosial kami untuk inspirasi kecantikan harian, penawaran khusus, dan keajaiban di balik layar.</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12 max-w-4xl mx-auto">
@@ -38,7 +38,7 @@ export function SocialMediaSection() {
                 <div className="mb-5 drop-shadow-sm group-hover:scale-110 transition-transform duration-300">
                   {social.icon}
                 </div>
-                <h3 className="font-bold text-xl text-gray-900 mb-2">{social.name}</h3>
+                <h3 className="font-bold text-lg md:text-xl text-gray-900 mb-2">{social.name}</h3>
                 <p className="text-gray-500 text-base group-hover:text-purple-600 transition-colors font-medium">{social.handle}</p>
               </div>
             </a>

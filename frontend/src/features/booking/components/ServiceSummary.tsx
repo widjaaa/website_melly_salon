@@ -66,7 +66,7 @@ export function ServiceSummary({ selectedServiceName }: ServiceSummaryProps) {
       />
 
       <CardHeader className="p-8 pb-4">
-        <CardTitle className="text-2xl font-bold text-gray-900">Ringkasan</CardTitle>
+        <CardTitle className="text-xl font-bold text-gray-900">Ringkasan</CardTitle>
       </CardHeader>
 
       <CardContent className="p-8 pt-0 flex flex-col gap-5">
@@ -103,9 +103,9 @@ export function ServiceSummary({ selectedServiceName }: ServiceSummaryProps) {
 
         {/* Price Row */}
         <div className="flex justify-between items-center pb-2 pt-1">
-          <span className="text-gray-900 font-bold text-lg">Estimasi Biaya</span>
+          <span className="text-gray-900 font-bold text-base">Estimasi Biaya</span>
           <span
-            className={`font-black text-3xl transition-all duration-300 ${
+            className={`font-black text-2xl transition-all duration-300 ${
               selectedService ? 'text-purple-700' : 'text-gray-400'
             }`}
           >
