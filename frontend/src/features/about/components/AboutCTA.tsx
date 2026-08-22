@@ -11,10 +11,10 @@ export function AboutCTA() {
           <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-pink-200 via-pink-50 to-transparent pointer-events-none" />
 
           <div className="max-w-3xl mx-auto relative z-10">
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight leading-tight">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 tracking-tight leading-tight">
               Siap Merasakan Perawatan Kecantikan Profesional?
             </h2>
-            <p className="text-gray-600 text-lg md:text-xl mb-10 leading-relaxed">
+            <p className="text-gray-600 text-base md:text-lg mb-10 leading-relaxed">
               Bergabunglah dengan ribuan klien yang mempercayakan kebutuhan kecantikan mereka kepada kami. Biarkan tim profesional kami memanjakan Anda hari ini.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

@@ -7,10 +7,10 @@ export function ServiceCTA() {
     <section className="py-12 bg-pink-50/50">
       <Container>
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-8 tracking-tight">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 tracking-tight">
             Siap Mengubah Penampilan Anda?
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
+          <p className="text-base md:text-lg text-gray-600 mb-8 leading-relaxed">
             Amankan slot Anda hari ini dan biarkan para profesional ahli kami yang menangani sisanya. Kami tidak sabar menyambut Anda di Melly Beauty Salon.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">

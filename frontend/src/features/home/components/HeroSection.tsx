@@ -19,21 +19,21 @@ export function HeroSection() {
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-6 items-center">
           
           {/* Left Content Area */}
-          <div className="flex flex-col items-start space-y-6 max-w-2xl">
+          <div className="flex flex-col items-start space-y-5 max-w-2xl">
             {/* Small Badge */}
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-pink-50 border border-pink-100 shadow-sm">
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-pink-50 border border-pink-100 shadow-sm">
               <span className="text-sm font-semibold text-purple-700 tracking-wide uppercase">
                 Spesialis Kecantikan & Pernikahan
               </span>
             </div>
             
             {/* Main Heading */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight tracking-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight tracking-tight">
               Pancarkan Kecantikan Anda Dengan <span className="text-purple-700">Perawatan Profesional</span>
             </h1>
             
             {/* Supporting Text */}
-            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-xl">
+            <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-xl">
               Nikmati perawatan kecantikan premium dan layanan pernikahan yang dirancang untuk membuat momen spesial Anda tak terlupakan.
             </p>
             

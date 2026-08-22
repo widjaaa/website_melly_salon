@@ -6,10 +6,10 @@ export function GalleryHero() {
       <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=1920')] bg-cover bg-center mix-blend-luminosity"></div>
       
       <div className="relative z-10 max-w-3xl mx-auto pt-10">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight tracking-tight">
           Galeri Kami
         </h1>
-        <p className="text-lg md:text-xl text-purple-100 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-base md:text-lg text-purple-100 max-w-2xl mx-auto leading-relaxed">
           Jelajahi transformasi kecantikan dan momen berkesan kami. Temukan seni keanggunan yang diracik oleh para ahli kami.
         </p>
       </div>

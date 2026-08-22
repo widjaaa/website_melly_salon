@@ -70,10 +70,10 @@ export function WelcomeScreen() {
       }}
     >
       <div className="text-center px-4 flex flex-col items-center">
-        <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-4 drop-shadow-xl text-white">
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4 drop-shadow-xl text-white">
           Melly Salon
         </h1>
-        <p className="text-xl md:text-3xl font-medium mb-12 text-purple-100 drop-shadow-md">
+        <p className="text-lg md:text-xl font-medium mb-12 text-purple-100 drop-shadow-md">
           Selamat Datang di Melly Salon
         </p>
         
